@@ -1,0 +1,186 @@
+/* Container input */
+.border-input{
+    width:80vw;
+    height:100px;
+    border-radius:100px;
+    background:rgb(179,139,250);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+/* Inputs generales */
+.border-input div input{
+    height:36px;
+    width:90%;
+}
+
+.border-input div{
+    width:50%;
+    display:flex;
+    position:relative;
+    align-items: center;
+    height:100%;
+}
+
+.border-input div input:focus{
+    outline: none;
+}
+
+/* Input search */
+
+.inputWithIcon input[type="text"] {
+    padding-left: 40px;
+    border-radius: 100px 0 0 100px;
+    font-family:'Lato';
+    font-weight:bold;
+    letter-spacing:1px;
+    font-size: 16px;
+    border:none;
+  }
+  
+  .inputWithIcon {
+    position: relative;
+    justify-content:flex-end;  
+  }
+  
+  .inputWithIcon .icon {
+    position: absolute;
+    left: 35px;
+    top: 28px;
+    padding: 9px 8px;
+    width:25px;
+    height:25px;
+    color: rgb(0,0,0) !important;
+  }
+
+/* Input date */
+div.line{
+    width:5px;
+    position:absolute;
+    height:30px;
+    background-color: #B38BFA;
+}
+.inputWithIconDate input[type="date"] {
+    padding-left: 45px;
+    border-radius: 0px 100px 100px 0px;
+    font-family:'Lato';
+    height:38px;
+    font-weight:bold;
+    letter-spacing:1px;
+    font-size: 16px;
+    border:none;
+  
+  }
+::-webkit-calendar-picker-indicator  {
+    position: absolute;
+    cursor: pointer;
+    left: -20px;
+    top: 28px;
+    padding: 9px 8px;
+    width:25px;
+    height:25px;
+    
+  }
+
+  .inputWithIconDate .button {
+    cursor: pointer;
+    position: absolute;
+    right: 39px;
+    top: 28px;
+    padding: 9px 8px;
+    width:25px;
+    height:25px;
+    color: #511E78;
+  }
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+    .border-input{
+        width:100vw;
+        height:80px;
+    }
+    .border-input div input{
+        height:40px;
+        width:70%;
+    }
+    .inputWithIcon .icon {
+        left: 15px;
+        top: 18px;
+    }
+    .inputWithIconDate input[type="date"] {
+        padding-left: 30px;
+        height:42px;
+    }
+    ::-webkit-calendar-picker-indicator  {
+        left: -30px;
+        top: 18px;
+    }
+    .border-input div input[type=date]{
+        width:80%;
+    }
+    .inputWithIconDate .button {
+        right: 10px;
+        top: 20px;
+      }
+}
+
+@media screen and (max-width: 900px)and (min-width: 600px) {
+    .border-input{
+        width:100vw;
+        height:80px;
+    }
+    .border-input div input{
+        height:40px;
+        width:85%;
+    }
+    .inputWithIcon .icon {
+        left: 20px;
+        top: 18px;
+    }
+    .inputWithIconDate input[type="date"] {
+        padding-left: 30px;
+        height:42px;
+    }
+    ::-webkit-calendar-picker-indicator  {
+        left: -30px;
+        top: 18px;
+    }
+    .border-input div input[type=date]{
+        width:85%;
+    }
+    .inputWithIconDate .button {
+        right: 30px;
+        top: 20px;
+      }
+}
+@media screen and (max-width: 1500px)and (min-width: 900px) {
+    .border-input{
+        width:100vw;
+        height:80px;
+    }
+    .border-input div input{
+        height:40px;
+        width:85%;
+    }
+    .inputWithIcon .icon {
+        left: 40px;
+        top: 18px;
+    }
+    .inputWithIconDate input[type="date"] {
+        padding-left: 30px;
+        height:42px;
+    }
+    ::-webkit-calendar-picker-indicator  {
+        left: -30px;
+        top: 18px;
+    }
+    .border-input div input[type=date]{
+        width:85%;
+    }
+    .inputWithIconDate .button {
+        right: 50px;
+        top: 20px;
+      }
+}
