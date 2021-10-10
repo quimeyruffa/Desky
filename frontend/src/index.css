@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --txt-color: #FFFFFF;
+}
+body{
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+footer{
+  background-image:url('./Svg.svg');
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  color: var(--txt-color );
+  min-height: 650px;
+  padding: 50px;
+}
+.footer-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+.footer-column a{
+  margin-top: 20px;
+
+}
+.footer-img{
+  margin-top: 20px;
+  color: black;
+  width: 100%;
+  display: flex;
+  
+}
+.container{
+padding: 2em;   
+}
+.split{
+  display: flex;
+  flex-direction: row;
+}
+.split> *{
+  flex-basis: 100%;
+}
+.split> *+*{
+  margin-left: 4em;
+  margin-top: 0em;
+}
+.product-link{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.product-circle{
+  background-color: #8642FF;
+  opacity: 22%;
+  height: 236px;
+  width: 236px;
+  border-radius: 50%;
+}
