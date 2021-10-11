@@ -74,55 +74,70 @@ export const Menu = styled.ul`
         height: 100vh;
         position: absolute;
         top: 0;
-        right: ${({click}) => click ? 0 : "-100%"};
+        right: ${({click}) => click ? 0 : "-100vw"};
         flex-direction: column;
         background-color: #49426c; 
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        align-items: flex;
-
     }
 `;
 
 
 export const MenuItem = styled.li`
-    border: 1px solid rgba(163, 183, 183, 0.5);
-    height: 100%;
-    padding: 0.5rem 2.0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 200;
-    color: #511e78;
-    text-align: center;
-    background-color: #fff;
-    margin:0;
+  border: 1px solid rgba(163, 183, 183, 0.5);
+  height: 100%;
+  padding: 0.5rem 2.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  color: #511e78;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+
+  &:hover {
+    background-color: #f4f6f6;
+    transition: 300ms all linear;
+    color: #ebc08b;
+    cursor: pointer;
+    
+    a {
+      color: #ebc08b;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    background-color: #49426c;
+    color: #ebc08b;
+    border: 0;
 
     &:hover {
-        background-color: rgba(163, 183, 183, 0.12);
-        transition: 300ms all linear;
-        color: #ebc08b;
-        cursor: pointer;
+      background-color: rgba(163, 183, 183, 0.12);
+      a {
+        border-bottom: 0.1rem solid #ebc08b;
+        transition: 0.3s ease-in;
+        color: inherit;
+      }
     }
-
-    @media screen and (max-width: 768px) {
-        background-color: #49426c;
-        color: #ebc08b;
-        border: 0;
-
-        &:hover a{
-            border-bottom: 0.1rem solid #ebc08b;
-            transition: 0.3s ease-in;
-        }
-    }
+  }
 
 `;
 
 export const MenuItemLink = styled.a`
-    text-decoration: none;
+    color: #511e78;
+
+    &:hover {
+      color: #ebc08b;
+      text-decoration: none;
+    }
+  
+  @media screen and (max-width: 768px) {
+    color: #ebc08b;
+  }
+  
 `;
 
 export const IconLogoMobile = styled.div`
@@ -133,7 +148,7 @@ export const IconLogoMobile = styled.div`
     color: #511e78;
     font-size: 2rem;
     padding-right: 1rem;
-    position: right;
+    position: relative;
     z-index: 150;
     transition: transform .4s 0s ease-in-out;
     
