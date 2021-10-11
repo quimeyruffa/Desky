@@ -13,6 +13,7 @@ const Navbar = () => {
     return ( 
         <>
             <NavBarContainer>
+        
                <NavbarWrapper>
                     <IconLogo className="icon">
                         <Logo width={50} height={40}/>
