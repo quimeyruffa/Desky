@@ -54,7 +54,6 @@ const Navbar = () => {
                             </MenuItemLink>  
                         </MenuItem>
                     </Menu>
-                    
                 </NavbarWrapper> 
             </NavBarContainer>
             

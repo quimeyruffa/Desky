@@ -1,0 +1,41 @@
+.header{
+    width:100vw;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    background-image: url('../../assets/SVG/header.svg');
+    background-repeat: no-repeat;
+    z-index: -1;
+    padding:2em;
+}
+
+.header div.split div.svg .conjunto-svg{
+    width:600px;
+    height:800px;
+}
+.header div.split div.svg{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.header div.split div.titulo{
+    color:#511E78;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:center;
+    font-family: 'ITC Benguiat Gothic Std';
+    
+    
+}
+.header div.split div.titulo h1{
+    font-size:200px !important;
+    margin-top:80px;
+    margin-right:280px !important;
+}
+.header div.split div.titulo h5{
+    font-size: 35px !important;
+    padding-left: 10px;
+    color:rgba(0, 0, 0, 0.596);
+}
