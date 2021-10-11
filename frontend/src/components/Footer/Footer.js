@@ -29,8 +29,7 @@ export const Footer = () => {
                        <FaLinkedinIn className='icon'/>
                     </div>
                     <a></a>
-                   
-                    <a >Lima 775, C1073 CABA</a>
+                    <a>Lima 775, C1073 CABA</a>
                 </div>
             </footer>
         </div>

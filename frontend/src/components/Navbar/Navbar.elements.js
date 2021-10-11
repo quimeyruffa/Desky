@@ -16,7 +16,7 @@ export const NavbarWrapper = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    background-color: #ffff;
+    background-color: #ffff !important;
 
     .sign-in {
         border: 0;
@@ -42,7 +42,7 @@ export const IconLogo = styled.div`
     align-items: center;
     font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
-    color: #ebc08b;
+    color: #ebc08b !important;
     padding-left: 1rem;
 `;
 
@@ -96,25 +96,25 @@ export const MenuItem = styled.li`
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
     font-weight: 200;
-    color: #511e78;
+    color: #511e78 !important;
     text-align: center;
-    background-color: #fff;
+    background-color: #fff !important;
     margin:0;
 
     &:hover {
         background-color: rgba(163, 183, 183, 0.12);
         transition: 300ms all linear;
-        color: #ebc08b;
+        color: #ebc08b !important;
         cursor: pointer;
     }
 
     @media screen and (max-width: 768px) {
         background-color: #49426c;
-        color: #ebc08b;
+        color: #ebc08b !important;
         border: 0;
 
         &:hover a{
-            border-bottom: 0.1rem solid #ebc08b;
+            border-bottom: 0.1rem solid #ebc08b !important;
             transition: 0.3s ease-in;
         }
     }
@@ -127,7 +127,6 @@ export const MenuItemLink = styled.a`
 
 export const IconLogoMobile = styled.div`
 
-    
     display: flex;
     order: 1;
     color: #511e78;
@@ -141,11 +140,11 @@ export const IconLogoMobile = styled.div`
     @media screen and (max-width: 768px ) {
 
         .amarillo {
-            color: #ebc08b;
+            color: #ebc08b !important;
         }
 
         .violeta {
-            color: #511e78;
+            color: #511e78 !important;
         }
         
     }
