@@ -37,7 +37,7 @@ footer{
   grid-template-columns: 33% 33% 33%;
   color: var(--txt-color );
   width:112vw !important;
-  height:500px;
+  height:500px; 
 }
 
 .footer-column{
