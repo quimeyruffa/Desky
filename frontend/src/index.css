@@ -32,11 +32,11 @@ body{
 
 footer{
   background-image: url('./Footer.svg');
-  background-repeat: repeat;
+  background-repeat: no-repeat !important;
   display: grid !important;
   grid-template-columns: 33% 33% 33%;
   color: var(--txt-color );
-  width:112vw;
+  width:112vw !important;
   height:500px;
   padding: 50px;
   padding-left: 200px;
