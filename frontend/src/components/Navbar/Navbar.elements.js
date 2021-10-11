@@ -100,7 +100,6 @@ export const MenuItem = styled.li`
     text-align: center;
     background-color: #fff !important;
     margin:0;
-
     &:hover {
         background-color: rgba(163, 183, 183, 0.12);
         transition: 300ms all linear;
@@ -123,6 +122,7 @@ export const MenuItem = styled.li`
 
 export const MenuItemLink = styled.a`
     text-decoration: none;
+    color: #511e78 !important;
 `;
 
 export const IconLogoMobile = styled.div`
