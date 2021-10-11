@@ -38,8 +38,6 @@ footer{
   color: var(--txt-color );
   width:112vw !important;
   height:500px;
-  padding: 50px;
-  padding-left: 200px;
 }
 
 .footer-column{
