@@ -16,7 +16,7 @@ const Navbar = () => {
         
                <NavbarWrapper>
                     <IconLogo className="icon">
-                        <Logo width={50} height={40}/>
+                        <Logo width={50} height={40} color="#511E78"/>
                     </IconLogo>
                     <IconLogoMobile onClick = { () => ChangeClick()}>
                         {
