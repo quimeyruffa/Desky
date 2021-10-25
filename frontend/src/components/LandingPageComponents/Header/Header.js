@@ -14,7 +14,7 @@ export const Header = () => {
                     <h5>TU NUEVO ESPACIO DE TRABAJO</h5>
                 </div>
                 <div className="svg">
-                    <Conjunto className='conjunto-svg' />
+                    <Conjunto className='conjunto-svg' style={{zIndex:10}}/>
                 </div>
 
             </div>

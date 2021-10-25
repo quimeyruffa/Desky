@@ -7,8 +7,9 @@ import CarouselComponent from './components/LandingPageComponents/Carousel/Carou
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-import { SearchBar } from './components/SearchComponents/SearchBar/SearchBar';
+import { SearchBar } from './components/SearchComponents/Searchbar/Searchbar.js';
 import {Busqueda} from './components/SearchComponents/Busqueda'
+import Membership from './components/LandingPageComponents/Memberships/Membership';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/" exact >
                     <Navbar />
                     <Header />
+                    <Membership />
                     <CarouselComponent />
                     <Clients />
                     <Footer />
