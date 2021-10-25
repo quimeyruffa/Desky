@@ -7,6 +7,7 @@ import CarouselComponent from './components/LandingPageComponents/Carousel/Carou
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {SearchCard} from "./components/SearchComponents/SearchCard/SearchCard";
+import { SearchBar } from './components/SearchComponents/SearchBar/SearchBar';
 function App() {
   return (
     <div className="App">
@@ -36,6 +37,9 @@ function App() {
                                 direccion="direccion 1234, comuna 13"
                                 precio="12345"
                                 amenities={["petFriendly", "podcast", "coffee"]}/>
+                </Route>
+                <Route path="/searchbar">
+                    <SearchBar/>
                 </Route>
             </Switch>
         </BrowserRouter>
