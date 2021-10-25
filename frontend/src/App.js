@@ -26,13 +26,13 @@ function App() {
                                 direccion="direccion 1234, comuna 13"
                                 precio="12345"
                                 amenities={["petFriendly", "kitchen", "podcast"]}/>
-                    <SearchCard nombre="WeWork"
-                                promedioPuntos="3.4"
+                    <SearchCard nombre="Cowork Ficticio"
+                                promedioPuntos="3"
                                 direccion="direccion 1234, comuna 13"
                                 precio="12345"
                                 amenities={["parking", "dining"]}/>
-                    <SearchCard nombre="WeWork"
-                                promedioPuntos="3.4"
+                    <SearchCard nombre="HIT Cowork"
+                                promedioPuntos="4.7"
                                 direccion="direccion 1234, comuna 13"
                                 precio="12345"
                                 amenities={["petFriendly", "podcast", "coffee"]}/>
