@@ -25,6 +25,7 @@ function App() {
                     {/*<Navbar />*/}
                     <Busqueda />
                 </Route>
+                {/* Probando la barra de busqueda*/}
                 <Route path="/searchbar">
                     <SearchBar/>
                 </Route>
