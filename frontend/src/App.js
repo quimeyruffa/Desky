@@ -6,8 +6,9 @@ import { Clients } from './components/LandingPageComponents/Clients/Clients';
 import CarouselComponent from './components/LandingPageComponents/Carousel/Carousel';
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {SearchCard} from "./components/SearchComponents/SearchCard/SearchCard";
+
 import { SearchBar } from './components/SearchComponents/SearchBar/SearchBar';
+import {Busqueda} from './components/SearchComponents/Busqueda'
 function App() {
   return (
     <div className="App">
@@ -22,21 +23,7 @@ function App() {
                 </Route>
                 <Route path="/search">
                     {/*<Navbar />*/}
-                    <SearchCard nombre="WeWork"
-                                promedioPuntos="3.4"
-                                direccion="direccion 1234, comuna 13"
-                                precio="12345"
-                                amenities={["petFriendly", "kitchen", "podcast"]}/>
-                    <SearchCard nombre="Cowork Ficticio"
-                                promedioPuntos="3"
-                                direccion="direccion 1234, comuna 13"
-                                precio="12345"
-                                amenities={["parking", "dining"]}/>
-                    <SearchCard nombre="HIT Cowork"
-                                promedioPuntos="4.7"
-                                direccion="direccion 1234, comuna 13"
-                                precio="12345"
-                                amenities={["petFriendly", "podcast", "coffee"]}/>
+                    <Busqueda />
                 </Route>
                 <Route path="/searchbar">
                     <SearchBar/>
