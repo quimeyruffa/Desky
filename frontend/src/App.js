@@ -1,12 +1,12 @@
 import './App.css';
-import { Footer } from './components/LandingPagaElements/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import Navbar from "./components/Navbar/Navbar";
-import { Header } from './components/LandingPagaElements/Header/Header';
-import { Clients } from './components/LandingPagaElements/Clients/Clients';
-import CarouselComponent from './components/LandingPagaElements/Carousel/Carousel';
+import { Header } from './components/LandingPageComponents/Header/Header';
+import { Clients } from './components/LandingPageComponents/Clients/Clients';
+import CarouselComponent from './components/LandingPageComponents/Carousel/Carousel';
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {SearchCard} from "./components/ElemBusqueda/SearchCard/SearchCard";
+import {SearchCard} from "./components/SearchComponents/SearchCard/SearchCard";
 function App() {
   return (
     <div className="App">
