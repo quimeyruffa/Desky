@@ -21,7 +21,21 @@ function App() {
                 </Route>
                 <Route path="/search">
                     {/*<Navbar />*/}
-                    <SearchCard nombre="WeWork" promedioPuntos="2" direccion="direccion 1234" precio="12345"/>
+                    <SearchCard nombre="WeWork"
+                                promedioPuntos="3.4"
+                                direccion="direccion 1234, comuna 13"
+                                precio="12345"
+                                amenities={["petFriendly", "kitchen", "podcast"]}/>
+                    <SearchCard nombre="WeWork"
+                                promedioPuntos="3.4"
+                                direccion="direccion 1234, comuna 13"
+                                precio="12345"
+                                amenities={["parking", "dining"]}/>
+                    <SearchCard nombre="WeWork"
+                                promedioPuntos="3.4"
+                                direccion="direccion 1234, comuna 13"
+                                precio="12345"
+                                amenities={["petFriendly", "podcast", "coffee"]}/>
                 </Route>
             </Switch>
         </BrowserRouter>
