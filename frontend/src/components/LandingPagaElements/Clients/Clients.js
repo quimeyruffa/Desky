@@ -1,14 +1,14 @@
 import React from 'react';
 import './clients.css';
-import JoinLogo from '../../assets/images/JoinLogo.png';
-import UrbanLogo from '../../assets/images/UrbanLogo.png'
-import GOLogo from '../../assets/images/GOLogo.png';
-import HitLogo from '../../assets/images/HitLogo.png';
-import CentralLogo from '../../assets/images/CentralLogo.png';
-import HubLogo from '../../assets/images/HubLogo.png';
-import BeleLogo from '../../assets/images/BeleLogo.png';
-import MLogo from '../../assets/images/MLogo.png';
-import WeWorkLogo from '../../assets/images/WeWorkLogo.png'
+import JoinLogo from '../../../assets/images/JoinLogo.png';
+import UrbanLogo from '../../../assets/images/UrbanLogo.png'
+import GOLogo from '../../../assets/images/GOLogo.png';
+import HitLogo from '../../../assets/images/HitLogo.png';
+import CentralLogo from '../../../assets/images/CentralLogo.png';
+import HubLogo from '../../../assets/images/HubLogo.png';
+import BeleLogo from '../../../assets/images/BeleLogo.png';
+import MLogo from '../../../assets/images/MLogo.png';
+import WeWorkLogo from '../../../assets/images/WeWorkLogo.png'
 export const Clients = () => {
     return (
         <div className='clients-container'>

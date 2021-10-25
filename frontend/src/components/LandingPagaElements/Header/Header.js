@@ -1,10 +1,10 @@
 import React from 'react';
 import './header.css';
-import { ReactComponent as Conjunto } from '../../assets/SVG/conjunto.svg';
+import { ReactComponent as Conjunto } from '../../../assets/SVG/conjunto.svg';
 import { Search } from '../Search/Search';
-import Workspace from '../../assets/images/workspace.png';
-import MeetingRoom from '../../assets/images/meetingRoom.png';
-import Museum from '../../assets/images/museum.png';
+import Workspace from '../../../assets/images/workspace.png';
+import MeetingRoom from '../../../assets/images/meetingRoom.png';
+import Museum from '../../../assets/images/museum.png';
 export const Header = () => {
     return (
         <div className='header'>

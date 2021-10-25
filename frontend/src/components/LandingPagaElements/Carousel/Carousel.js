@@ -7,7 +7,7 @@ import {
   CarouselCaption
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FondoCarousel from '../../assets/images/fondoCarousel.png'
+import FondoCarousel from '../../../assets/images/fondoCarousel.png'
 const items = [
   {
     

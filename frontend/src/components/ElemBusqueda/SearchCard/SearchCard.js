@@ -1,7 +1,7 @@
 import './searchCard.css';
 import {Link} from "react-router-dom";
 import Rating from "@mui/material/Rating"
-import {Amenity} from "../Amenities/Amenity";
+import {Amenity} from "./Amenities/Amenity";
 
 export const SearchCard = (props) => {
 
