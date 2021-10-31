@@ -1,7 +1,14 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
-import {useState} from "react";
+import React, {useState} from "react";
 import {SearchBar} from "./Searchbar/Searchbar";
+import {WavesHeader} from "../../assets/images/WavesHeader";
+import {WavesFooter} from "../../assets/images/WavesFooter";
+import './busqueda.css'
+import Navbar from "../Navbar/Navbar";
+import Logo from "../../assets/images/Logo";
+import {Footer} from "../Footer/Footer";
+import {SearchHeader} from "../Headers/SearchHeader";
 
 export const Busqueda = () => {
     const [datos, setDatos] = useState([
@@ -190,23 +197,36 @@ export const Busqueda = () => {
 
     return (
         <>
-            <SearchBar/>
-            <Slider/>
-            <select name="filter" id="filter" onChange={handleChange} style={{margin: "0 0 10px 5px", display: "flex"}}>
-                <option value="nada">Elija un filtro</option>
-                <option value="orderPrice">Ordenar por precio</option>
-            </select>
+            <Navbar/>
+            <SearchHeader />
+            <div className="search-filters">
+                <SearchBar/>
+                <Slider/>
+                <select name="filter" id="filter" onChange={handleChange}
+                        style={{margin: "0 0 10px 5px", display: "flex"}}>
+                    <option value="nada">Elija un filtro</option>
+                    <option value="orderPrice">Ordenar por precio</option>
+                </select>
+            </div>
 
             {datos.map((cowork, index) => {
 
                 return (cowork.tipo.map((oficina, index) => {
-                    return (<SearchCard key={index} nombre={cowork.nombre}
+                    return (<SearchCard className="cw-card" key={index} nombre={cowork.nombre}
                                         promedioPuntos={cowork.promedioPuntos}
                                         direccion={cowork.direccion.streetAddress}
                                         precio={oficina.precio}
                                         amenities={oficina.diferencial}/>)
                 }))
             })}
+
+            <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
+            <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
+            <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
+            <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
+            <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
+
+            <Footer/>
         </>
     )
 }

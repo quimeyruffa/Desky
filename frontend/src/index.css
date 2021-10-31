@@ -32,13 +32,13 @@ body{
 
 footer{
   background-image: url('./Footer.svg');
-  background-repeat: no-repeat !important;
-  display: grid !important;
-  grid-template-columns: 33% 33% 33%;
+  display: flex !important;
+  justify-content: space-around;
+  flex-direction: row;
   color: var(--txt-color );
   width: 100vw !important;
-  height: 500px; 
-  padding-left: 50px;
+  height: 500px;
+  font-family: Roboto, serif;
 }
 
 .footer-column{
@@ -51,12 +51,13 @@ footer{
 .footer-column a{
   margin-top: 40px;
   font-size: 25px;
+  cursor: pointer;
 
 }
 .footer-img{
   justify-content: space-between;
   color: black;
-  width: 25%;
+  width: 90%;
   display: flex;
   
 }
@@ -101,6 +102,29 @@ width: 100vw !important;
 .product-circle img{
   height: 195px;
   width: 195px;
+}
+
+@media screen and (max-width: 540px){
+  footer {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+  }
+
+  .footer-column:nth-of-type(1){
+    padding-top: 80px;
+  }
+
+  .footer-column a {
+    margin-top: 10px;
+  }
+
+  .footer-column {
+    margin-bottom: 50px;
+    width: 70%;
+    text-align: left;
+  }
 }
 
 

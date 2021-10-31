@@ -1,0 +1,15 @@
+.search-filters {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+    .cw-card {
+        width: 100%;
+    }
+
+    .search-filters {
+        flex-direction: column;
+        width: 100vw;
+    }
+}

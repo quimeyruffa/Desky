@@ -72,7 +72,7 @@ export const Menu = styled.ul`
 
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: ${({click}) => click ? 0 : "-100vw"};
         flex-direction: column;
@@ -97,7 +97,15 @@ export const MenuItem = styled.li`
   text-align: center;
   background-color: #fff;
   margin: 0;
-
+  
+  :nth-of-type(1) {
+    border-top-left-radius: 10px;
+  }
+  
+  :nth-of-type(4){
+    border-bottom-left-radius: 10px;
+  }
+  
   &:hover {
     background-color: #f4f6f6;
     transition: 300ms all linear;
@@ -154,7 +162,7 @@ export const IconLogoMobile = styled.div`
     
 
     @media screen and (max-width: 768px ) {
-
+      
         .amarillo {
             color: #ebc08b;
         }

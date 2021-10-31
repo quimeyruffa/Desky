@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 600px;
+    width: 50%;
     border-radius: 10px;
     border: 1px #B9B7B7 solid;
 }
@@ -38,7 +38,7 @@ p.nombre {
     font-size: 23px;
 }
 
-img {
+.cowork-img {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -68,4 +68,11 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 411px) {
+    .cowork-img {
+        width: 33%;
+
+    }
 }
