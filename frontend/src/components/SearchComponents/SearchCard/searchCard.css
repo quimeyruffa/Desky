@@ -71,7 +71,7 @@ p.nombre {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 430px) {
     .cowork-img {
         width: 33%;
 

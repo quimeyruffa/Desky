@@ -165,10 +165,14 @@ export const IconLogoMobile = styled.div`
       
         .amarillo {
             color: #ebc08b;
+            position: fixed;
+            right: 15px;
+            top: 15px;
         }
 
         .violeta {
             color: #511e78;
+            position: relative;
         }
         
     }
