@@ -1,0 +1,15 @@
+.selectAmenities{
+    border: 0px none;
+    box-sizing: border-box;
+    display: block;
+    margin: 0px;
+    background: rgb(255, 255, 255);
+    padding: 6px 10px;
+    font-size: 13px;
+    position: relative;
+    width: 215px;
+    color: rgb(51, 51, 51);
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px inset;
+    line-height: 20px;
+}

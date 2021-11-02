@@ -6,8 +6,6 @@ import { Clients } from './components/LandingPageComponents/Clients/Clients';
 import CarouselComponent from './components/LandingPageComponents/Carousel/Carousel';
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-
-import { SearchBar } from './components/SearchComponents/Searchbar/Searchbar.js';
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
 function App() {

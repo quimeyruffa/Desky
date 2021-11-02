@@ -1,6 +1,19 @@
 .search-filters {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 200px;
+}
+.cards-coworks{
+    margin-top: 20px
+}
+.botonSearch{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #4B03BA;
+    color: #FFFFFF;
+    font-size: 1.9em;
 }
 
 @media screen and (max-width: 768px) {
