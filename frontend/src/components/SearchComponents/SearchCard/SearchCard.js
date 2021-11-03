@@ -10,7 +10,7 @@ export const SearchCard = (props) => {
             <div className={"Scard " + props.className}>
                 <div className="info">
                     <img
-                        src="https://s3-alpha-sig.figma.com/img/3095/7916/41fe5b911f795d9ec720eebef19e848a?Expires=1635724800&Signature=QG1g~Sf5vp33Cb5z87xsfoerQufgWWPHBDiPEgGObG3O-~WDUuVR0rKjezchEE~Tut4CGMzyx7yXznfIVk6IBn1q1YBvNf8xzogtVOePicmxGVwg1Fkf~U1btG7y0NvSBwtFiORmcRe4ysLyiQXjiY2t7bGVvsoEjXhilHFL9Bh0iPBTmv4GrEaPCFIehVakMGIeBcreHFOrX9zS5YNUxuv3WFn0RfKLpr0xa6oK~1DEDrOTq62zr~cOfBJAJkKYhGeSkrYvB-1Vk4-q0rZc73yiLWENkcXCqKJgcCRQmesAAs3FBk-89xG2a9kVEpSOFTF2CO1KECiaylHAaxvQNA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                        src="https://infonegocios.info/uploads/HIT-Cowork-oficinas-caba-4-cba.jpg"
                         width="220px" height="160px"
                         className="cowork-img"/>
                     <div className="datosCowork">
