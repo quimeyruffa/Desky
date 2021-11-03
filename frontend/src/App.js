@@ -26,9 +26,7 @@ function App() {
                     {/*<Navbar />*/}
                     <Busqueda />
                 </Route>
-                <Route path="/test">
-                    <DropdwAmenities/>
-                </Route>
+
             </Switch>
         </BrowserRouter>
     </div>

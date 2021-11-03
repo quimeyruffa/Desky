@@ -1,7 +1,7 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
 import React, {useState} from "react";
-import {SearchBar} from "./Searchbar/Searchbar";
+import {SearchBar} from "./SearchBar/Searchbar";
 import {WavesHeader} from "../../assets/images/WavesHeader";
 import {WavesFooter} from "../../assets/images/WavesFooter";
 import './busqueda.css'
