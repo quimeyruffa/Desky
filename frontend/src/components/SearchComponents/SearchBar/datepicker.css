@@ -1,0 +1,21 @@
+.picker {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    margin-top: 50px;
+}
+
+.input-fecha-mui {
+    border: 0;
+    margin-left: 15px;
+    outline: none;
+    width: 100px;
+}
+
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    background-color: #511E78 !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    fill: black !important;
+}

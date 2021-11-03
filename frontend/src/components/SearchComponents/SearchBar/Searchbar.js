@@ -1,5 +1,6 @@
 import "./searchbar.css"
 import SearchIcon from '@mui/icons-material/Search';
+import {DatePicker} from "./DatePicker";
 
 export const SearchBar = () => {
     return (
@@ -13,11 +14,13 @@ export const SearchBar = () => {
             <div className="contenedor-blanco fechas">
                 <span className="separator"/>
                 <div className='input-fecha'>
-                    <input id="input-llegada" className='fecha-entrada' type="date"/>
+                    <DatePicker className="fecha-entrada"/>
+                    {/*<input id="input-llegada" className='fecha-entrada' type="date"/>*/}
                 </div>
                 <span className="separator"/>
                 <div className='input-fecha'>
-                    <input id="input-salida" className='fecha-salida' type="date"/>
+                    <DatePicker className="fecha-salida"/>
+                    {/*<input id="input-salida" className='fecha-salida' type="date"/>*/}
                 </div>
             </div>
         </div>
