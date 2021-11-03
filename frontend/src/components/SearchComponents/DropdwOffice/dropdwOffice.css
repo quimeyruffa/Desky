@@ -1,0 +1,116 @@
+.dropdown-office-header-data {
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dropdown-office-header {
+    width: 200px;
+    padding: 7px 6px;
+    background: rgba(174, 170, 182, 0.59);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.dropdown-office-header-text {
+    font-family: 'Alegreya Sans', sans-serif;
+    user-select: none;
+}
+
+.user-circle {
+    width: 30px;
+    height: 30px;
+}
+
+.down-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+#miembros {
+    font-weight: bold;
+}
+#input-miembros {
+    width: 30px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.boton-input {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.minus {
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.plus {
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.dropdown-office-body-members {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.dropdown-office-body {
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 99;
+    left: 5px;
+    height: 150px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 30px 84px rgba(19, 10, 46, 0.08), 0px 8px 32px rgba(19, 10, 46, 0.07), 0px 3px 14px rgba(19, 10, 46, 0.03), 0px 1px 3px rgba(19, 10, 46, 0.13);
+    border-radius: 0px 0px 12px 12px;
+    user-select: none;
+}
+
+.dropdown-office-body-offices {
+    width: 90%;
+}
+
+.offices {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.dw-office-member-input {
+    border: 1px black solid;
+    border-radius: 5px;
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+.dropdown-office-container {
+    height: 62px;
+    width: 200px;
+}
+
+.offices {
+    cursor: pointer;
+}

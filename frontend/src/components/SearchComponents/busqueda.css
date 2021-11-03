@@ -1,13 +1,22 @@
 .search-filters {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     height: 200px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around !important;
+    width: 100vw !important;
 }
 .cards-coworks{
     margin-top: 20px
 }
-.botonSearch{
+.botonSearch {
     width: 150px;
     height: 50px;
     border-radius: 10px;
@@ -22,6 +31,12 @@
     text-decoration: none;
 }
 
+.botonSearch:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     .cw-card {
         width: 100%;
@@ -32,13 +47,16 @@
     }
 
     .search-filters {
-        flex-direction: column;
         width: 100vw;
+        height: 500px;
     }
-}
 
-@media screen and (max-width: 420px){
-    .search-filters {
-        display: none;
+    .filters {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .botonSearch {
+        order: -1;
     }
 }

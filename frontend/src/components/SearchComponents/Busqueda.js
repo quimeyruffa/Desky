@@ -1,7 +1,7 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
 import React, {useState} from "react";
-import {SearchBar} from "./SearchBar/Searchbar";
+import {SearchBar} from "./Searchbar/Searchbar";
 import {WavesHeader} from "../../assets/images/WavesHeader";
 import {WavesFooter} from "../../assets/images/WavesFooter";
 import './busqueda.css'
@@ -12,7 +12,7 @@ import {Footer} from "../Footer/Footer";
 import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
-
+import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 export const Busqueda = () => {
     
     const [datos, setDatos] = useState([
@@ -205,13 +205,17 @@ export const Busqueda = () => {
             <Navbar/>
             <SearchHeader />
             <div className="search-filters">
-                <SearchBar/>
-                <Slider/>
-                <DropdwAmenities/>
-                <OrderBy/>
-                <Link to="/" class = "botonSearch"> Buscar </Link>
-                
-                
+                <div className="filters">
+                    <SearchBar/>
+                    <DropdwOffice/>
+                    <DropdwAmenities/>
+                    <Link to="/" class="botonSearch"> Buscar </Link>
+                </div>
+                <div className="filters">
+                    <OrderBy/>
+                    <Slider/>
+                </div>
+
             </div>
 
             <div className = "cards-coworks">
