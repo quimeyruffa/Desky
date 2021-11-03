@@ -14,6 +14,7 @@ import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 export const Busqueda = () => {
+    
     const [datos, setDatos] = useState([
         {
             "_id": "001",
@@ -174,6 +175,7 @@ export const Busqueda = () => {
         }
     ]);
 
+    
     const handleChange = (event) => {
         if (event.target.value !== "nada") {
 

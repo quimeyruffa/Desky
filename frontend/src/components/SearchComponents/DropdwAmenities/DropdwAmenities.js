@@ -1,18 +1,23 @@
-import "./dropdwamenities.css"
-import React, {useState} from 'react';
-import PetsIcon from '@mui/icons-material/Pets';
-import PodcastsIcon from '@mui/icons-material/Podcasts';
-import KitchenIcon from '@mui/icons-material/Kitchen';
-import LocalParkingIcon from '@mui/icons-material/LocalParking';
-import DiningIcon from '@mui/icons-material/Dining';
-import CoffeeIcon from '@mui/icons-material/Coffee';
+import React from 'react'
+import './dropdwamenities.css'
+import {AiOutlineDown, AiOutlineUp} from "react-icons/all";
 export const DropdwAmenities = () => {
-    return(
-        <div className = "contenedor-amenities" >
-           <select className="select" >
-               <option value = "petfriendly"> PetFriendly <img src = {PetsIcon}></img></option>
-               <option value = "podcast"> Podcast </option>
-           </select>
+    return (
+        <div className = 'contenedor-select-amenities'>
+            <div className = 'contenedor-gris-select'>
+                <div className = 'contenedor-blanco-select'>
+                    <p> Amenities...</p>
+                    <AiOutlineDown />
+                </div>     
+            </div>
+            <div className='contenedor-opciones-amenities'>
+                <select> 
+                    <option> PetFriendly </option>
+                    <option> PetFriendly </option>
+                    <option> PetFriendly </option>
+                    <option> PetFriendly </option>
+                </select> 
+            </div>
         </div>
     )
 }

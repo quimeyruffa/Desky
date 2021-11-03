@@ -8,6 +8,7 @@ import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
+import { DropdwAmenities } from './components/SearchComponents/DropdwAmenities/DropdwAmenities';
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,9 @@ function App() {
                     {/*<Navbar />*/}
                     <Busqueda />
                 </Route>
-                {/* Probando la barra de busqueda*/}
+                <Route path="/test">
+                    <DropdwAmenities/>
+                </Route>
             </Switch>
         </BrowserRouter>
     </div>
