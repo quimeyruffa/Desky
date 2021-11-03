@@ -12,6 +12,7 @@ import {Footer} from "../Footer/Footer";
 import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
+import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 export const Busqueda = () => {
     const [datos, setDatos] = useState([
         {
@@ -204,7 +205,7 @@ export const Busqueda = () => {
             <div className="search-filters">
                 <div className="filters">
                     <SearchBar/>
-                    <DropdwAmenities/>
+                    <DropdwOffice/>
                     <DropdwAmenities/>
                     <Link to="/" class="botonSearch"> Buscar </Link>
                 </div>
