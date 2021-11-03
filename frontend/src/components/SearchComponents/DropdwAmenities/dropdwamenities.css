@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 220px ;
+    width: 200px ;
     background: rgba(174, 170, 182, 0.59);
     height: 50px ;
     border-radius: 10px;
@@ -25,16 +25,16 @@
     position: absolute;
     background: white;
     border-radius: 10px;
-    width: 200px;
-    height: 40px;
+    width: 190px;
+    height: 37px;
 }
 
 .contenedor-opciones-amenities{
-    z-index: 99;
+    z-index: 98;
     user-select:none;
     position: relative;
-    left: 10px;
-    width: 200px;
+    left: 5px;
+    width: 190px;
     height: 300px;
     display: flex;
     flex-direction: column;
