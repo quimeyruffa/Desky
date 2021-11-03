@@ -12,7 +12,9 @@ import {Footer} from "../Footer/Footer";
 import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
+
 export const Busqueda = () => {
+    
     const [datos, setDatos] = useState([
         {
             "_id": "001",
@@ -173,6 +175,7 @@ export const Busqueda = () => {
         }
     ]);
 
+    
     const handleChange = (event) => {
         if (event.target.value !== "nada") {
 
@@ -204,9 +207,10 @@ export const Busqueda = () => {
             <div className="search-filters">
                 <SearchBar/>
                 <Slider/>
+                <DropdwAmenities/>
                 <OrderBy/>
                 <Link to="/" class = "botonSearch"> Buscar </Link>
-                <DropdwAmenities/>
+                
                 
             </div>
 
