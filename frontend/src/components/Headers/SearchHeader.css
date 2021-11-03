@@ -21,6 +21,12 @@
     height: 30vh;
 }
 
+@media screen and (max-width: 1366px) {
+    .titulo-search {
+        font-size: 8rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     .title-wrapper {

@@ -30,6 +30,7 @@
 .down-arrow {
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 #miembros {
@@ -115,4 +116,10 @@
 
 .offices {
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .dropdown-office-container {
+        margin: 0 0 20px 0;
+    }
 }

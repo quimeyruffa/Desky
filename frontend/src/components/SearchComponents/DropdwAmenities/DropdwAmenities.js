@@ -2,6 +2,8 @@ import React from 'react'
 import './dropdwamenities.css'
 import { useState } from 'react';
 import {AiOutlineDown, AiOutlineUp} from "react-icons/all";
+
+
 export const DropdwAmenities = () => {
     const [amenities, setAmenities] = useState({
         petfriendly: false,

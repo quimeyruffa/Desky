@@ -2,17 +2,15 @@ import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
 import React, {useState} from "react";
 import {SearchBar} from "./SearchBar/Searchbar";
-import {WavesHeader} from "../../assets/images/WavesHeader";
-import {WavesFooter} from "../../assets/images/WavesFooter";
 import './busqueda.css'
 import {Link} from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import Logo from "../../assets/images/Logo";
 import {Footer} from "../Footer/Footer";
 import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
+
 export const Busqueda = () => {
     
     const [datos, setDatos] = useState([
@@ -174,38 +172,37 @@ export const Busqueda = () => {
             ]
         }
     ]);
-
     
-    const handleChange = (event) => {
-        if (event.target.value !== "nada") {
-
-            let copia = datos.slice();
-
-            copia.sort((a, b) => {
-                let maxA = 0;
-                let maxB = 0;
-
-                for (const elem of a.tipo) {
-                    maxA = (elem.precio > maxA) ? elem.precio : maxA;
-                }
-
-                for (const elem of b.tipo) {
-                    maxB = (elem.precio > maxB) ? elem.precio : maxB;
-                }
-
-                return (maxA > maxB) ? -1 : 1;
-            });
-
-            setDatos(copia);
-        }
-    };
+    // const handleChangeFiltro = (event) => {
+    //     if (event.target.value !== "nada") {
+    //
+    //         let copia = datos.slice();
+    //
+    //         copia.sort((a, b) => {
+    //             let maxA = 0;
+    //             let maxB = 0;
+    //
+    //             for (const elem of a.tipo) {
+    //                 maxA = (elem.precio > maxA) ? elem.precio : maxA;
+    //             }
+    //
+    //             for (const elem of b.tipo) {
+    //                 maxB = (elem.precio > maxB) ? elem.precio : maxB;
+    //             }
+    //
+    //             return (maxA > maxB) ? -1 : 1;
+    //         });
+    //
+    //         setDatos(copia);
+    //     }
+    // };
 
     return (
         <>
             <Navbar/>
             <SearchHeader />
             <div className="search-filters">
-                <div className="filters">
+                <div className="filters first-line">
                     <SearchBar/>
                     <DropdwOffice/>
                     <DropdwAmenities/>

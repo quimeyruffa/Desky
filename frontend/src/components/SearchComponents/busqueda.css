@@ -11,8 +11,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around !important;
-    width: 100vw !important;
+    width: 70vw !important;
 }
+
 .cards-coworks{
     margin-top: 20px
 }
@@ -38,6 +39,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1366px) {
+    .filters {
+        width: 100vw !important;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .cw-card {
         width: 100%;
@@ -49,15 +56,11 @@
 
     .search-filters {
         width: 100vw;
-        height: 500px;
+        height: 600px;
     }
 
     .filters {
         flex-direction: column;
         justify-content: space-around;
-    }
-
-    .botonSearch {
-        order: -1;
     }
 }

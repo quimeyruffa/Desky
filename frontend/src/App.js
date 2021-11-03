@@ -8,7 +8,7 @@ import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
-import { DropdwAmenities } from './components/SearchComponents/DropdwAmenities/DropdwAmenities';
+
 function App() {
   return (
     <div className="App">
@@ -23,10 +23,8 @@ function App() {
                     <Footer />
                 </Route>
                 <Route path="/search">
-                    {/*<Navbar />*/}
                     <Busqueda />
                 </Route>
-
             </Switch>
         </BrowserRouter>
     </div>
