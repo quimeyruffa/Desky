@@ -59,6 +59,11 @@
     transition: 100ms all linear;
     font-weight: bold;
 }
+
+.linea-opciones:last-of-type:hover {
+    border-radius: 0 0 12px 12px;
+}
+
 .cuadrado-check{
     margin-left: 25px;
     border:1px black solid;
