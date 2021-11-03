@@ -47,6 +47,7 @@
     width: 30px;
     height: 30px;
     border: none;
+    outline-color: #511E78;
 }
 
 .minus {
@@ -70,6 +71,7 @@
     justify-content: space-around;
     align-items: center;
     padding-top: 10px;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 .dropdown-office-body {
