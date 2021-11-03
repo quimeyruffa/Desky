@@ -1,7 +1,7 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
 import React, {useState} from "react";
-import {SearchBar} from "./SearchBar/Searchbar";
+import {SearchBar} from "./Searchbar/Searchbar";
 import {WavesHeader} from "../../assets/images/WavesHeader";
 import {WavesFooter} from "../../assets/images/WavesFooter";
 import './busqueda.css'
@@ -202,12 +202,17 @@ export const Busqueda = () => {
             <Navbar/>
             <SearchHeader />
             <div className="search-filters">
-                <SearchBar/>
-                <Slider/>
-                <OrderBy/>
-                <Link to="/" class = "botonSearch"> Buscar </Link>
-                <DropdwAmenities/>
-                
+                <div className="filters">
+                    <SearchBar/>
+                    <DropdwAmenities/>
+                    <DropdwAmenities/>
+                    <Link to="/" class="botonSearch"> Buscar </Link>
+                </div>
+                <div className="filters">
+                    <OrderBy/>
+                    <Slider/>
+                </div>
+
             </div>
 
             <div className = "cards-coworks">

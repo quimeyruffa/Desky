@@ -1,13 +1,13 @@
 .contenedor-ordenados{
     align-items: center;
     display: flex;
-    width: 335px;
+    width: 400px;
     height: 40px;
     flex-direction: row;
 }
 .ordenadosPor{
     display: flex;
-    width: 120px !important;
+    width: 140px !important;
 }
 .selectOrden{
     border: 0px none;
@@ -18,9 +18,16 @@
     padding: 6px 10px;
     font-size: 13px;
     position: relative;
-    width: 215px;
+    width: 260px;
     color: rgb(51, 51, 51);
     border-radius: 12px;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px inset;
     line-height: 20px;
+}
+
+@media screen and (max-width: 411px) {
+    .contenedor-ordenados {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
 }

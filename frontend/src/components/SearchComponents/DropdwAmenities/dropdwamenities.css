@@ -13,3 +13,7 @@
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px inset;
     line-height: 20px;
 }
+
+.select {
+    margin-top: 10px;
+}

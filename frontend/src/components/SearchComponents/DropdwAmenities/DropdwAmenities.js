@@ -9,7 +9,7 @@ import CoffeeIcon from '@mui/icons-material/Coffee';
 export const DropdwAmenities = () => {
     return(
         <div className = "contenedor-amenities" >
-           <select class="select" >
+           <select className="select" >
                <option value = "petfriendly"> PetFriendly <img src = {PetsIcon}></img></option>
                <option value = "podcast"> Podcast </option>
            </select>
