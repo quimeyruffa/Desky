@@ -7,11 +7,18 @@ import './datepicker.css'
 import {Box} from "@mui/material";
 
 export const  DatePicker = (props) => {
-    const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
+    const [value, setValue] = React.useState(new Date());
 
     const handleChange = (newValue) => {
         setValue(newValue);
     };
+
+    const options = {
+        weekday: "short",
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+    }
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -25,7 +32,7 @@ export const  DatePicker = (props) => {
                 renderInput={({ inputRef, inputProps, InputProps }) => (
                     <div className={"picker " + props.className}>
                         {InputProps?.endAdornment}
-                        <input disabled ref={inputRef} {...inputProps} className="input-fecha-mui" />
+                        <input disabled ref={inputRef} {...inputProps} className="input-fecha-mui" value={value.toLocaleDateString("es-ES",options)}/>
                     </div>
 
                 )}

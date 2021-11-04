@@ -24,6 +24,13 @@
 
 }
 
+.label-input-searchbar {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 13px;
+    position: relative;
+    left: -8px;
+}
+
 .lupa {
     width: 40%;
     border-radius: 5px 0 0 5px;
@@ -122,9 +129,8 @@
     }
 
     .input-fecha {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        position: relative;
+        top: -15px
     }
 
     .fecha-entrada{
@@ -136,6 +142,12 @@
         top: -30px;
         left: -10px;
     }
+
+    .label-input-searchbar {
+        position: relative;
+        top: 12px !important;
+    }
+
     /*#input-llegada, #input-salida {*/
     /*    width: 70%;*/
     /*    left: 5px;*/

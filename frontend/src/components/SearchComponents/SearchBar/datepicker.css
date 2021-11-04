@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     width: 150px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .input-fecha-mui {
@@ -10,9 +10,17 @@
     margin-left: 15px;
     outline: none;
     width: 100px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 15px;
+    user-select: none !important;
+    margin-top: 10px;
 }
 
 .css-bkrceb-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    background-color: #511E78 !important;
+}
+
+.css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected  {
     background-color: #511E78 !important;
 }
 
