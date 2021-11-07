@@ -16,10 +16,9 @@ export const Header = () => {
                 <div className="svg">
                     <Conjunto className='conjunto-svg' style={{zIndex:10}}/>
                 </div>
-
             </div>
             <Search />
-            <section class="container" >
+            <section class="products-container" >
                 <div className="split">
                     <div className="product-link">
                         <div className="product-circle">

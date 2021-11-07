@@ -36,9 +36,6 @@ function App() {
                     <Busqueda />
                 </Route>
                 {/* Probando la barra de busqueda*/}
-                <Route path="/searchbar">
-                    <SearchBar/>
-                </Route>
             </Switch>
         </BrowserRouter>
     </div>
