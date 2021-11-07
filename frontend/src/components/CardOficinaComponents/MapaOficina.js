@@ -4,8 +4,8 @@ import ReactMapGL, {Marker} from 'react-map-gl';
 
 const MapaCard
   const [viewport, setViewport] = useState({
-    width: 800,
-    height: 1200,
+    width: 1200,
+    height: 800,
     latitude: -34.60373394696125,
     longitude: -58.381635006505434,
     zoom: 13
