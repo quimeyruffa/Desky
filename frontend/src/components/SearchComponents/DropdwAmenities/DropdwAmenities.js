@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {AiOutlineDown, AiOutlineUp} from "react-icons/all";
 
 
-export const DropdwAmenities = () => {
+export const DropdwAmenities = (props) => {
     const [amenities, setAmenities] = useState({
         petfriendly: false,
         shop: false,
@@ -17,9 +17,9 @@ export const DropdwAmenities = () => {
         setClick(!click);
     }
     const handleClick = (event) =>{
-        console.log(event);
         const amenity = event.target.id.substring(0, event.target.id.length-1);
         setAmenities({...amenities, [amenity] : !amenities[amenity]});
+        props.handleAmenities(event);
     }
     return (
         <div className = 'dropdown-amenities-container'>
