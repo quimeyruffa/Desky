@@ -1,5 +1,5 @@
 .header{
-    width:100vw;
+    width:100%;
     display:flex;
     align-items: center;
     justify-content:center;
@@ -9,33 +9,54 @@
     z-index: -1;
     padding:2em;
 }
+.header-container{
+	width: min(90%,79rem);
+	margin-inline: auto;
+}
 
-.header div.split div.svg .conjunto-svg{
-    width:600px;
-    height:800px;
-}
-.header div.split div.svg{
-  display:flex;
-  justify-content:flex-end;
-}
 
 .header div.split div.titulo{
     color:#511E78;
+    margin-top: 40px;
     display:flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items:center;
     justify-content:center;
     font-family: 'ITC Benguiat Gothic Std';
     
     
 }
+
+.header .conjunto-svg{
+    width: 500px;
+    height: 500px;
+    display: none;
+}
 .header div.split div.titulo h1{
-    font-size:200px !important;
-    margin-top:80px;
-    margin-right:280px !important;
+    font-size:60px;
+    
+    
 }
 .header div.split div.titulo h5{
-    font-size: 35px !important;
-    padding-left: 10px;
+    font-size: 35px;
+    
     color:rgba(0, 0, 0, 0.596);
+}
+@media (min-width: 50em){
+    .header div.split div.titulo{
+        margin-top: 0px;
+        
+        
+        
+    }
+	
+    .header .conjunto-svg{
+        
+        display: block;
+    }
+    .header div.split div.titulo h1{
+        font-size:150px;
+        
+        
+    }
 }

@@ -8,18 +8,19 @@ import Museum from '../../assets/images/museum.png';
 export const Header = () => {
     return (
         <div className='header'>
-            <div className="split">
-                <div className='titulo'>
-                    <h1>DESKY</h1>
-                    <h5>TU NUEVO ESPACIO DE TRABAJO</h5>
+            <div className='header-container'>
+                <div className="split">
+                    <div className='titulo'>
+                        <h1>DESKY</h1>
+                        <h5>TU NUEVO ESPACIO DE TRABAJO</h5>
+                    </div>
+                    <div className="svg">
+                        <Conjunto className='conjunto-svg' />
+                    </div>
                 </div>
-                <div className="svg">
-                    <Conjunto className='conjunto-svg' />
-                </div>
-
             </div>
             <Search />
-            <section class="container" >
+            <section class="products-container" >
                 <div className="split">
                     <div className="product-link">
                         <div className="product-circle">
