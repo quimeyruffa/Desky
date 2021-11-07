@@ -1,21 +1,35 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Svg from '../../assets/SVG/FondoRegister.svg';
+
 export const Register = () => {
     const [name, setName] = useState('');
     const [lastname, setLastname] = useState('');
     const [empresa, setEmpresa] = useState('');
     const [email, setEmail] = useState('');
-    const [ password, setPassword] = useState('');
+    const [password, setPassword] = useState('');
     const [repassword, setRepassword] = useState('');
 
-    const Submit = async () =>{
-        
+    const Submit = async () => {
+        console.log('llegue')
+        await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                
+            },
+            body: JSON.stringify({
+                username:name,
+                email: email,
+                password: password
+            })
+        }).then(function(data){ console.log(  data ) });
     }
     return (
         <ContainerRegister>
             <Left>
-                
+
             </Left>
             <Right>
                 <Title>Bienvenido!</Title>
@@ -23,34 +37,34 @@ export const Register = () => {
                     <ContainerInput>
                         <Input width={'300px'} size={'100px'}>
                             <span>Nombre</span>
-                            <input type="text"  onChange={(e)=>setName(e.target.value)}/>
+                            <input type="text" onChange={(e) => setName(e.target.value)} />
                         </Input>
 
                         <Input width={'300px'} size={'100px'} style={{ marginLeft: '99px' }}>
                             <span>Apellido</span>
-                            <input type="text"  onChange={(e)=>setLastname(e.target.value)}/>
+                            <input type="text" onChange={(e) => setLastname(e.target.value)} />
                         </Input>
                     </ContainerInput>
                     <br />
                     <Input width={'700px'} size={'200px'}>
                         <span>Nombre Empresa</span>
-                        <input type="text" onChange={(e)=>setEmpresa(e.target.value)}/>
+                        <input type="text" onChange={(e) => setEmpresa(e.target.value)} />
                     </Input>
                     <br />
                     <Input width={'700px'} size={'100px'}>
                         <span>Email</span>
-                        <input type="email" onChange={(e)=>setEmail(e.target.value)}/>
+                        <input type="email" onChange={(e) => setEmail(e.target.value)} />
                     </Input>
                     <br />
                     <ContainerInput>
                         <Input width={'300px'} size={'100px'}>
                             <span>Password</span>
-                            <input type="password" onChange={(e)=>setPassword(e.target.value)}/>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)} />
                         </Input>
 
                         <Input width={'300px'} size={'200px'} style={{ marginLeft: '99px' }}>
                             <span>Re enter-password</span>
-                            <input type="password" onChange={(e)=>setRepassword(e.target.value)}/>
+                            <input type="password" onChange={(e) => setRepassword(e.target.value)} />
                         </Input>
                     </ContainerInput>
                     <br /> <br /> <br />
@@ -64,13 +78,14 @@ export const Register = () => {
 const ContainerRegister = styled.div`
         width:100vw;
         height:100vh;
-        background-color:#6600FF;
+        background-color:#4B03BA;
         display:flex;
         flex-direction: row;
 `
 const Left = styled.div`
     width:50%;
     height:100vh;
+    background-image:url(${Svg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center, 50%, 50%;

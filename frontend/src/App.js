@@ -11,6 +11,7 @@ import { SearchBar } from './components/SearchComponents/Searchbar/Searchbar.js'
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
 import { Register } from './components/Register/Register';
+import { Login } from './components/Login/Login';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
             <Switch>
                 <Route path="/login" exact>
                     <Navbar />
+                    <Login />
                 </Route>
                 <Route path="/register" exact>
                     <Navbar />
