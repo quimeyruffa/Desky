@@ -1,11 +1,26 @@
 import React from 'react';
 import './header.css';
 import { ReactComponent as Conjunto } from '../../../assets/SVG/conjunto.svg';
-import { Search } from '../Search/Search';
+import { SearchBar } from '../SearchBarLanding/Searchbar';
 import Workspace from '../../../assets/images/workspace.png';
 import MeetingRoom from '../../../assets/images/meetingRoom.png';
 import Museum from '../../../assets/images/museum.png';
+import { useState } from 'react';
+
 export const Header = () => {
+
+    const [valueLlegada, setValueLlegada] = React.useState(new Date());
+    const [valueSalida, setValueSalida] = useState(new Date());
+
+    const handleChangeLlegada = (newValue) => {
+        setValueLlegada(newValue);
+    };
+
+    const handleChangeSalida = (newValue) => {
+        setValueSalida(newValue);
+    }
+    
+
     return (
         <div className='header'>
             <div className="split">
@@ -18,7 +33,10 @@ export const Header = () => {
                 </div>
 
             </div>
-            <Search />
+            <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
+                               valueLlegada={valueLlegada}
+                               handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
+                               valueSalida={valueSalida}/>
             <section class="container" >
                 <div className="split">
                     <div className="product-link">
