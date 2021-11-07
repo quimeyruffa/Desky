@@ -2,7 +2,7 @@ import './dropdwOffice.css'
 import {AiOutlineDown, AiOutlineMinus, AiOutlinePlus, AiOutlineUp, BiUserCircle} from "react-icons/all";
 import {useState} from "react";
 
-export const DropdwOffice = () => {
+export const DropdwOffice = (props) => {
 
     const [miembros, setMiembros] = useState(0);
     const [oficina, setOficina] = useState("Oficina")
@@ -24,6 +24,7 @@ export const DropdwOffice = () => {
 
     const handleClickClick = (event) => {
         setClick(!click);
+        props.handleChange(miembros, oficina);
     }
 
     return (
@@ -51,9 +52,11 @@ export const DropdwOffice = () => {
                 <div className="dropdown-office-body-offices">
                     <select className="offices" onChange={handleSelect}>
                         <option value="Oficina">Oficina</option>
-                        <option value="Open Office">Open Office</option>
-                        <option value="Private Office">Private Office</option>
-                        <option value="Any">Any</option>
+                        <option value="Espacio Abierto">Espacio Abierto</option>
+                        <option value="Oficina Privada">Oficina Privada</option>
+                        <option value="Sala de Reuniones">Sala de reuniones</option>
+                        <option value="Eventos">Eventos</option>
+                        <option value="Cualquiera">Cualquiera</option>
                     </select>
                 </div>
             </div>

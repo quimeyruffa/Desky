@@ -1,6 +1,6 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {SearchBar} from "./SearchBar/Searchbar";
 import './busqueda.css'
 import {Link} from "react-router-dom";
@@ -174,6 +174,21 @@ export const Busqueda = () => {
     ]);
     const [valueLlegada, setValueLlegada] = React.useState(new Date());
     const [valueSalida, setValueSalida] = useState(new Date());
+    const [ordenarPor, setOrdenarPor] = useState("elegir");
+    const [rangoPrecios, setRangoPrecios] = useState([5000, 70000]);
+    const [amenities, setAmenities] = useState({
+        petfriendly: false,
+        shop: false,
+        parking: false,
+        podcast: false,
+        kitchen: false
+    });
+    const [miembros, setMiembros] = useState(0);
+    const [oficina, setOficina] = useState("Cualquiera");
+
+    const handleChangePrecios = (event, newValue) => {
+        setRangoPrecios(newValue);
+    }
 
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
@@ -182,7 +197,22 @@ export const Busqueda = () => {
     const handleChangeSalida = (newValue) => {
         setValueSalida(newValue);
     }
-    
+
+    const handleOrderBy = (event) => {
+        setOrdenarPor(event.target.value);
+    }
+
+    const handleAmenities = (event) => {
+        const amenity = event.target.id.substring(0, event.target.id.length-1);
+        setAmenities({...amenities, [amenity] : !amenities[amenity]});
+    }
+
+    const handleChangeDropdownMiembros = (miembros, oficina) => {
+        setMiembros(miembros);
+        setOficina(oficina);
+    }
+
+
     // const handleChangeFiltro = (event) => {
     //     if (event.target.value !== "nada") {
     //
@@ -217,13 +247,13 @@ export const Busqueda = () => {
                                valueLlegada={valueLlegada}
                                handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
                                valueSalida={valueSalida}/>
-                    <DropdwOffice/>
-                    <DropdwAmenities/>
+                    <DropdwOffice handleChange={handleChangeDropdownMiembros}/>
+                    <DropdwAmenities handleAmenities={handleAmenities}/>
                     <Link to="/" class="botonSearch"> Buscar </Link>
                 </div>
                 <div className="filters">
-                    <OrderBy/>
-                    <Slider/>
+                    <OrderBy handleChange={handleOrderBy}/>
+                    <Slider handleChange={handleChangePrecios}/>
                 </div>
 
             </div>
