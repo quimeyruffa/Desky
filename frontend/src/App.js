@@ -10,11 +10,19 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { SearchBar } from './components/SearchComponents/Searchbar/Searchbar.js';
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
+import { Register } from './components/Register/Register';
 function App() {
   return (
     <div className="App">
         <BrowserRouter>
             <Switch>
+                <Route path="/login" exact>
+                    <Navbar />
+                </Route>
+                <Route path="/register" exact>
+                    <Navbar />
+                    <Register />
+                </Route>
                 <Route path="/" exact >
                     <Navbar />
                     <Header />
