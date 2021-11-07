@@ -7,11 +7,6 @@ import './datepicker.css'
 import {Box} from "@mui/material";
 
 export const  DatePicker = (props) => {
-    const [value, setValue] = React.useState(new Date());
-
-    const handleChange = (newValue) => {
-        setValue(newValue);
-    };
 
     const options = {
         weekday: "short",
@@ -25,14 +20,12 @@ export const  DatePicker = (props) => {
             <DesktopDatePicker
                 label="Custom input"
                 inputFormat="dd/MM/yyyy"
-                value={value}
-                onChange={(newValue) => {
-                    setValue(newValue);
-                }}
+                value={props.value}
+                onChange={props.handleChange}
                 renderInput={({ inputRef, inputProps, InputProps }) => (
                     <div className={"picker " + props.className}>
                         {InputProps?.endAdornment}
-                        <input disabled ref={inputRef} {...inputProps} className="input-fecha-mui" value={value.toLocaleDateString("es-ES",options)}/>
+                        <input disabled ref={inputRef} {...inputProps} className="input-fecha-mui" value={props.value.toLocaleDateString("es-ES",options)}/>
                     </div>
 
                 )}

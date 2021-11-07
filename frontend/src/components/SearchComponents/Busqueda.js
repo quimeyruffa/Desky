@@ -172,6 +172,16 @@ export const Busqueda = () => {
             ]
         }
     ]);
+    const [valueLlegada, setValueLlegada] = React.useState(new Date());
+    const [valueSalida, setValueSalida] = useState(new Date());
+
+    const handleChangeLlegada = (newValue) => {
+        setValueLlegada(newValue);
+    };
+
+    const handleChangeSalida = (newValue) => {
+        setValueSalida(newValue);
+    }
     
     // const handleChangeFiltro = (event) => {
     //     if (event.target.value !== "nada") {
@@ -203,7 +213,10 @@ export const Busqueda = () => {
             <SearchHeader />
             <div className="search-filters">
                 <div className="filters first-line">
-                    <SearchBar/>
+                    <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
+                               valueLlegada={valueLlegada}
+                               handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
+                               valueSalida={valueSalida}/>
                     <DropdwOffice/>
                     <DropdwAmenities/>
                     <Link to="/" class="botonSearch"> Buscar </Link>
