@@ -1,0 +1,77 @@
+.contenedor-principal{
+    border-radius: 5px;
+    background-color: #B5B5B5;
+    border: 1px #B9B7B7 solid;
+    width: 565px;
+    height: 50px;
+    padding: 5px;
+    margin: 20px 20px 20px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, 0px 0px 0px 0px rgba(0,0,0,0);
+    
+}
+
+.contenedor-blanco {
+    border-radius: 5px;
+    background-color: white;
+    border: 1px #B9B7B7 solid;
+    height: 40px;
+    width: 565px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#input-llegada::-webkit-calendar-picker-indicator {
+    position: absolute;
+    cursor: pointer;
+    left: -40px;
+    top: -8px;
+    width:25px;
+    height:25px;
+}
+
+#input-salida::-webkit-calendar-picker-indicator {
+    position: absolute;
+    cursor: pointer;
+    left: -50px;
+    top: -8px;
+    width:25px;
+    height:25px;
+}
+
+.busqueda{
+    width: 220px;
+    display: flex;
+    align-items: center;
+}
+
+.input{
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0%;
+}
+
+.input-fecha{
+    position: relative;
+    width: 150px;
+}
+
+.fecha-entrada{
+    width: 110px;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0%;
+}
+
+.fecha-salida{
+    width: 130px;
+    border: 0 !important;
+    border-radius: 0%;
+}
