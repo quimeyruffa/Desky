@@ -7,7 +7,7 @@ const Membership = () => {
         <ContainerCards>
             <Container>
                 <Header style={{background:'#511E78'}}>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY DAILY</span>
                 </Header>
                 <Body>
@@ -22,7 +22,7 @@ const Membership = () => {
 
             <Container>
                 <Header>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY PREMIUM</span>
                 </Header>
                 <Body>
@@ -38,7 +38,7 @@ const Membership = () => {
 
             <Container>
                 <Header style={{background:'#000000'}}>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY BUSINESS</span>
                 </Header>
                 <Body>
@@ -60,26 +60,37 @@ export default Membership
 
 const ContainerCards = styled.div`
     display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
     padding:10px;
+    @media (min-width: 50em){
+        flex-direction:row;
+    }
  `
 const Container = styled.div`
-    width:579px;
-    height:877px;
+    width:80%;
+    border-radius:25px;
     display:flex;
+    justify-content:space-between;
     flex-direction:column;
     background-image: url(${Fondo});
     background-size:cover;                    
     background-repeat:no-repeat;
     background-position:center center;
+    margin-bottom:40px;
+    @media (min-width: 50em){
+        width:25%;
+    }
+    
     
 `
 const Header = styled.div`
     width:100%;
     border-radius: 20px 20px 0 0;
     background-image: url(${Logo});
-    height:433px;
+    padding:30px;
+    height:200px;
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -88,7 +99,8 @@ const Header = styled.div`
     background-repeat:no-repeat;
     background-position:center center;
     span{
-        font-size:50px;
+        font-size:32px;
+        margin-top:20px;
         font-weight:bold;
         font-family: 'ITC Benguiat Gothic Std';
         color:white;
@@ -101,20 +113,23 @@ const Header = styled.div`
 
 const Body = styled.div`
     width: 100%;
-    height: 220px;
+    
     label{
         font-family: "Roboto";
-        font-size:32px;
-        text-align:center;
+        font-size:20px;
+        text-align:left;
         padding:1em;
-        font-weight:regular;
+        font-weight:400;
     }
 `
 const Footer = styled.div`
-    height:200px;
+    padding:20px;
     display:flex;
+    flex-direction:colum;
     justify-content:center;
     align-items:flex-end;
+    margin-top:20px;
+    
     button{
         border-radius: 60px;
         height: 80px;
@@ -122,7 +137,7 @@ const Footer = styled.div`
         background-color: rgb(114,44,225);
         border:none;
         color:white;
-        font-size:45px;
+        font-size:24px;
         font-weight:bold;
     }
 `
