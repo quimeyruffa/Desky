@@ -15,7 +15,8 @@
 }
 
 .cards-coworks{
-    margin-top: 20px
+    margin-top: 20px;
+    width: 50%;
 }
 .botonSearch {
     user-select: none;
@@ -39,6 +40,35 @@
     cursor: pointer;
 }
 
+.cw-card {
+    width: 100%;
+}
+
+.scrollable{
+    background-color: #FFFF !important;
+    overflow-y:scroll !important;
+    max-height:700px !important; /*deberia ser del alto del mapa*/
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: rgba(181, 175, 175, 0.5);
+    border-radius: 5px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(181, 175, 175, 0.75);
+}
+
 @media screen and (max-width: 1366px) {
     .filters {
         width: 100vw !important;
@@ -46,9 +76,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .cw-card {
-        width: 100%;
-    }
+
 
     .cw-card:nth-of-type(1) {
         margin-top: 30px;

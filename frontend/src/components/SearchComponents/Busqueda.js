@@ -12,7 +12,7 @@ import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 
 export const Busqueda = () => {
-    
+
     const [datos, setDatos] = useState([
         {
             "_id": "001",
@@ -258,7 +258,7 @@ export const Busqueda = () => {
 
             </div>
 
-            <div className = "cards-coworks">
+            <div className = "cards-coworks scrollable">
                 {datos.map((cowork, index) => {
 
                     return (cowork.tipo.map((oficina, index) => {
