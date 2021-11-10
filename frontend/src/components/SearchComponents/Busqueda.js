@@ -8,15 +8,16 @@ import Navbar from "../Navbar/Navbar";
 import {Footer} from "../Footer/Footer";
 import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
-import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
+import {DropdwAmenities} from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 
 export const Busqueda = () => {
     const history = useHistory()
     const uri = 'http://localhost:3000';
-
-    const [datos, setDatos] = useState([]);
+    const [coworks, setCoworks] = useState([]);
+    const [coworksFallback, setCoworksFallback] = useState([]);
+    const [datosOficinas, setDatosOficinas] = useState([]);
     const [valueLlegada, setValueLlegada] = useState(new Date());
     const [valueName, setValueName] = useState("");
     const [valueSalida, setValueSalida] = useState(new Date());
@@ -46,17 +47,13 @@ export const Busqueda = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    setDatos(data);
-                    console.log(data);
+                    setCoworks(data);
+                    setCoworksFallback(data);
                 }).catch(e => {
-                    console.log(e);
+                console.log(e);
             })
-
         }
-    },[])
-
-    console.log(nombre, valueSalida, valueLlegada);
-
+    }, [])
 
     const handleChangePrecios = (event, newValue) => {
         setRangoPrecios(newValue);
@@ -75,10 +72,15 @@ export const Busqueda = () => {
     }
     const handleChangeName = (newValue) => {
         setValueName(newValue);
+        if (newValue.target.value === "" || newValue.target.value === null) {
+            setCoworks(coworksFallback);
+        } else {
+            setCoworks(coworks.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
+        }
     }
     const handleAmenities = (event) => {
-        const amenity = event.target.id.substring(0, event.target.id.length-1);
-        setAmenities({...amenities, [amenity] : !amenities[amenity]});
+        const amenity = event.target.id.substring(0, event.target.id.length - 1);
+        setAmenities({...amenities, [amenity]: !amenities[amenity]});
     }
 
     const handleChangeDropdownMiembros = (miembros, oficina) => {
@@ -87,15 +89,15 @@ export const Busqueda = () => {
     }
 
 
-    const handleClickButton = () =>{
-        fetch(`${uri}/coworksInPriceRange`, {
+    const handleClickButton = () => {
+        fetch(`${uri}/coworksInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
             method: 'GET',
         })
-        .then((res) => res.json())
-        .then((data) => {
-            
-        })
-        
+            .then((res) => res.json())
+            .then((data) => {
+                setCoworks(data);
+            })
+
     }
 
 
@@ -122,23 +124,22 @@ export const Busqueda = () => {
     //         setDatos(copia);
     //     }
     // };
- 
+
 
     return (
         <>
             <Navbar/>
-            <SearchHeader />
+            <SearchHeader/>
             <div className="search-filters">
                 <div className="filters first-line">
                     <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
                                valueLlegada={valueLlegada}
                                handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
                                valueSalida={valueSalida}
-                               valueName = {valueName}
-                               handleName = {(newValue) => handleChangeName(newValue)}/>
+                               handleName={(newValue) => handleChangeName(newValue)}/>
                     <DropdwOffice handleChange={handleChangeDropdownMiembros}/>
                     <DropdwAmenities handleAmenities={handleAmenities}/>
-                    <button onClick={handleClickButton} className="botonSearch"> Buscar </button>
+                    <button onClick={handleClickButton} className="botonSearch"> Buscar</button>
                 </div>
                 <div className="filters">
                     <OrderBy handleChange={handleOrderBy}/>
@@ -147,15 +148,16 @@ export const Busqueda = () => {
 
             </div>
 
-            <div className = "cards-coworks scrollable">
-                {datos.map((cowork, index) => {
+            <div className="cards-coworks scrollable">
+                {coworks.map((cowork, index) => {
 
-                    return (cowork.tipo.map((oficina, index) => {
+                    return (cowork.tipo && cowork.tipo.map((oficina, index) => {
                         return (<SearchCard className="cw-card" key={index} nombre={cowork.nombre}
                                             promedioPuntos={cowork.promedioPuntos}
                                             direccion={cowork.direccion.streetAddress}
                                             precio={oficina.precio}
                                             amenities={oficina.diferencial}/>)
+
                     }))
                 })}
             </div>
