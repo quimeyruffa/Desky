@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+.AmenitiesOficina-container{
+    display: flex;
+    padding-top:7em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.matriz{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+.matriz div{
+    width:25%;
+    
+}
+
+.matriz div img.circulo{
+    height:100px;
+    width:100px;
+    position: relative;
+}
+.matriz div .img{
+    height:50px;
+    width:100px;
+}
+
+.matriz div  .borde{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width:300px;
+    height: 200px;
+    margin:15px;
+    border-radius:0px;
+    background-color: rgb(218,204,245)
+}
+
+a{
+    font-size: large;
+}

@@ -3,6 +3,7 @@ import { Footer } from './components/Footer/Footer';
 import Navbar from "./components/Navbar/Navbar";
 import { Header } from './components/LandingPageComponents/Header/Header';
 import { Clients } from './components/LandingPageComponents/Clients/Clients';
+import { AmenitiesOficina } from './components/CardOficinaComponents/AmenitiesOficina';
 import CarouselComponent from './components/LandingPageComponents/Carousel/Carousel';
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
@@ -22,6 +23,7 @@ function App() {
                     <CarouselComponent />
                     <Clients />
                     <Footer />
+                    <AmenitiesOficina />
                 </Route>
                 <Route path="/search">
                     {/*<Navbar />*/}
