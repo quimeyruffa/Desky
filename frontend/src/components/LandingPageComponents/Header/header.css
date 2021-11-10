@@ -14,6 +14,9 @@
     margin-inline: auto;
 }
 
+.header .links-container{
+    margin: 100px 0em;
+}
 
 .header div.split div.titulo{
     color:#511E78;

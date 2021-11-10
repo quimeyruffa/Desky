@@ -31,7 +31,7 @@ export const SearchBar = (props) => {
                 </div>
             </div>
 
-            <button onClick={handleClick}> BUSCAR TODOS </button>
+            <button className='search-button' onClick={handleClick}> Buscar </button>
             {/* <Link to={{pathname:"/search", state: {name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}}}> BUSCAR TODOS </Link> 
             <Link to={{pathname:"/search", state: {name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}}}> BUSCAR POR FILTROS </Link>  */}
         </div>

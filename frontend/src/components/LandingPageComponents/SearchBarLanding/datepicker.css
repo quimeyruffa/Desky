@@ -1,15 +1,15 @@
-.picker {
+.home-picker {
     display: flex;
     align-items: center;
     width: 150px;
-    margin-top: 30px;
+    
 }
 
 .input-fecha-mui-landing {
     border: 0;
     margin-left: 15px;
     outline: none;
-    width: 160px !important;
+    width: 140px !important;
     height: 20px !important;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 23px !important;
