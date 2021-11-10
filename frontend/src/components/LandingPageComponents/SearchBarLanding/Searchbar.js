@@ -6,7 +6,9 @@ import { useHistory } from 'react-router';
 export const SearchBar = (props) => {
     const history = useHistory();
     const handleClick = () =>{
-        history.push("/search", JSON.stringify({name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}));
+        localStorage.setItem("fechaFin", props.valueSalida);
+        localStorage.setItem("fechaIni", props.valueLlegada);
+        history.push("/search");
     }
     return (
         <div className='contenedor-principal-landing'>

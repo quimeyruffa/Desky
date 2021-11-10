@@ -3,7 +3,7 @@ const CoworkService = require("../services/cowork.service");
 exports.getCoworksInPriceRange = async (req, res) => {
     const {min, max} = req.query;
 
-    const filtro = {"tipo": {"$elemMatch" : {"$and" :  [{"precio": {"$gte": min}}, {"precio": {"$lte": max}}]}}};
+    const filtro = {"tipo": {"$elemMatch": {"$and": [{"precio": {"$gte": min}}, {"precio": {"$lte": max}}]}}};
 
     const data = await CoworkService.getCoworks(filtro);
 
@@ -13,7 +13,7 @@ exports.getCoworksInPriceRange = async (req, res) => {
 exports.getCoworksInDateRange = async (req, res) => {
     const {fechaIni, fechaFin} = req.query;
 
-    const filtro = {"tipo": {"$elemMatch" : {"$and" :  [{"fechaIni": {"$gte": new Date(fechaIni)}}, {"fechaFin": {"$lte": new Date(fechaFin)}}]}}};
+    const filtro = {"tipo": {"$elemMatch": {"$and": [{"fechaIni": {"$gte": new Date(fechaIni)}}, {"fechaFin": {"$lte": new Date(fechaFin)}}]}}};
 
     const data = await CoworkService.getCoworks(filtro);
 
@@ -27,3 +27,9 @@ exports.getCoworksInOrderByRecommendation = async (req, res) => {
 
     return res.json(data);
 };
+
+exports.getAllCoworks = async (req, res) => {
+    const data = await CoworkService.getCoworks({});
+
+    return res.json(data);
+}

@@ -22,7 +22,8 @@ export const Header = () => {
     }
     
     const handleChangeName = (newValue) => {
-        setValueName(newValue)
+        setValueName(newValue);
+        localStorage.setItem("nombre", newValue.target.value);
     }
     
     return (
