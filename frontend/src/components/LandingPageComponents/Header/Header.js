@@ -28,6 +28,7 @@ export const Header = () => {
     
     return (
         <div className='header'>
+
             <div className="header-container">
                 <div className="split">
                     <div className='titulo'>
@@ -47,6 +48,7 @@ export const Header = () => {
                                valueName = {valueName}
                                handleName = {(newValue) => handleChangeName(newValue)} />
             <section className='links-container' >
+
                 <div className="split">
                     <div className="product-link">
                         <div className="product-circle">

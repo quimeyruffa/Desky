@@ -16,7 +16,9 @@
 
 .header .links-container{
     margin: 100px 0em;
+
 }
+
 
 .header div.split div.titulo{
     color:#511E78;
@@ -35,13 +37,21 @@
     height: 500px;
     display: none;
 }
+
+.header .conjunto-svg{
+    width: 500px;
+    height: 500px;
+    display: none;
+}
 .header div.split div.titulo h1{
     font-size:60px;
+
 
 
 }
 .header div.split div.titulo h5{
     font-size: 35px;
+
 
     color:rgba(0, 0, 0, 0.596);
 }
@@ -62,4 +72,6 @@
 }
 .header .split .svg .conjunto-svg .cls-2 {
     fill: #fce9c2;
+
 } 
+

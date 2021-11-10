@@ -32,6 +32,7 @@ body{
 
 footer{
   background-image: url('./Footer.svg');
+
   display: flex !important;
   justify-content: space-around;
   flex-direction: row;
@@ -39,8 +40,8 @@ footer{
   width: 100vw !important;
   height: 500px;
   font-family: Roboto, serif;
-}
 
+}
 .footer-column{
   display: flex;
   flex-direction: column;
@@ -52,8 +53,18 @@ footer{
   margin-top: 40px;
   font-size: 25px;
   cursor: pointer;
-
 }
+@media (min-width: 50em){
+  footer{
+    grid-template-columns: 33% 33% 33%;
+    height: 500px; 
+  }
+  .footer-column a{
+    margin-top: 40px;
+  font-size: 25px;
+  }
+}
+
 .footer-img{
   justify-content: space-between;
   color: black;
@@ -71,12 +82,19 @@ margin-bottom: 4em !important;
 width: 100vw !important;  
 }
 
+
+.products-container{
+  padding-top: 7em !important; 
+  margin-bottom: 4em !important;
+  width: 100vw !important;  
+  }
+
+
+
 .split{
 	display: flex;
 	flex-direction: column;
 }
-
-
 
 .split> *+*{
 	margin-top: 2em;
@@ -94,7 +112,23 @@ width: 100vw !important;
 		margin-left: 4em;
 		margin-top: 0em;
 	}
+
 }
+
+@media (min-width: 50em){
+	.split{
+		flex-direction: row;
+
+	}
+	.split> *{
+		flex-basis: 100%;
+	}
+	.split> *+*{
+		margin-left: 4em;
+		margin-top: 0em;
+	}
+}
+
 .product-link{
   display: flex;
   align-items: center;

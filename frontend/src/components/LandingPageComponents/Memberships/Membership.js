@@ -7,7 +7,7 @@ const Membership = () => {
         <ContainerCards>
             <Container>
                 <Header style={{background:'#511E78'}}>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY DAILY</span>
                 </Header>
                 <Body>
@@ -22,7 +22,7 @@ const Membership = () => {
 
             <Container>
                 <Header>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY PREMIUM</span>
                 </Header>
                 <Body>
@@ -38,7 +38,7 @@ const Membership = () => {
 
             <Container>
                 <Header style={{background:'#000000'}}>
-                    <LogoDesky style={{ width: '160px', height: '197px' }} />
+                    <LogoDesky style={{ width: '120px', height: '120px' }} />
                     <span>DESKY BUSINESS</span>
                 </Header>
                 <Body>
@@ -67,7 +67,7 @@ const ContainerCards = styled.div`
     @media (min-width: 50em){
         flex-direction:row;
     }
-`
+
 const Container = styled.div`
     width:80%;
     border-radius:25px;
