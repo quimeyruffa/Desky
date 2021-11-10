@@ -67,7 +67,7 @@ const ContainerCards = styled.div`
     @media (min-width: 50em){
         flex-direction:row;
     }
- `
+
 const Container = styled.div`
     width:80%;
     border-radius:25px;
@@ -109,8 +109,8 @@ const Header = styled.div`
         fill: #fff;
         fill-opacity: 100;
     }
-`
 
+`
 const Body = styled.div`
     width: 100%;
     

@@ -4,11 +4,13 @@ import './slider.css'
 import {useState} from "react";
 
 
-export default function Slider() {
-    const [values, setValues] = useState([5000, 70000]);
+export default function Slider(props) {
 
-    const handleChange = (event, newValue) => {
-        setValues(newValue);
+    const [rangoPrecios, setRangoPrecios] = useState([5000, 70000]);
+
+    const handleChangePrecios = (event, newValue) => {
+        setRangoPrecios(newValue);
+        props.handleChange(event, newValue);
     };
 
     const valuetext = (value) => {
@@ -17,7 +19,8 @@ export default function Slider() {
 
     return (
         <div className="slider-container">
-            <SliderUnstyled className="slider" defaultValue={10} value={values} onChange={handleChange} step={150}
+            <SliderUnstyled className="slider" defaultValue={10} value={rangoPrecios}
+                            onChange={handleChangePrecios} step={150}
                             valueLabelDisplay="on" min={0} max={150000} valueLabelFormat={valuetext} />
         </div>
     );
