@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap%27');
+
 .clients-container{
     display: flex;
     padding-top:7em;
@@ -18,7 +19,7 @@
     font-family: 'Alegreya Sans', sans-serif;
     font-size:96px;
     font-weight: medium;
-   
+
 }
 .clients-container .header-clients span{
     font-family: 'Alegreya Sans', sans-serif;
@@ -37,7 +38,7 @@
 
 .matriz div{
     width:25%;
-    
+
 }
 .matriz div img.circulo{
     height:100px;
