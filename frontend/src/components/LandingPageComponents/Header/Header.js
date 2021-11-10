@@ -7,11 +7,12 @@ import MeetingRoom from '../../../assets/images/meetingRoom.png';
 import Museum from '../../../assets/images/museum.png';
 import { useState } from 'react';
 
+
 export const Header = () => {
 
     const [valueLlegada, setValueLlegada] = React.useState(new Date());
     const [valueSalida, setValueSalida] = useState(new Date());
-
+    const [valueName, setValueName] = useState("");
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
     };
@@ -20,7 +21,10 @@ export const Header = () => {
         setValueSalida(newValue);
     }
     
-
+    const handleChangeName = (newValue) => {
+        setValueName(newValue)
+    }
+    
     return (
         <div className='header'>
             <div className="split">
@@ -34,9 +38,11 @@ export const Header = () => {
 
             </div>
             <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
-                               valueLlegada={valueLlegada}
+                            valueLlegada={valueLlegada}
                                handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
-                               valueSalida={valueSalida}/>
+                               valueSalida={valueSalida}
+                               valueName = {valueName}
+                               handleName = {(newValue) => handleChangeName(newValue)} />
             <section class="container" >
                 <div className="split">
                     <div className="product-link">

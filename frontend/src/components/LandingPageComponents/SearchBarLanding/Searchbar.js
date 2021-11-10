@@ -1,14 +1,19 @@
 import "./searchbar.css"
 import SearchIcon from '@mui/icons-material/Search';
 import {DatePicker} from "./DatePicker";
-
+import { Link } from "react-router-dom";
+import { useHistory } from 'react-router';
 export const SearchBar = (props) => {
+    const history = useHistory()
+    const handleClick = () =>{
+        history.push("/search", JSON.stringify({name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}));
+    }
     return (
         <div className='contenedor-principal-landing'>
             <div className="contenedor-blanco-landing lupa-landing">
                 <div className='busqueda-landing'>
                     <SearchIcon/>
-                    <input className="input-landing" type="search"/>
+                    <input onChange={props.handleName}  className="input-landing" type="search"/>
                 </div>
             </div>
             <div className="contenedor-blanco-landing fechas-landing">
@@ -23,6 +28,10 @@ export const SearchBar = (props) => {
                     <DatePicker className="fecha-salida-landing" handleChange={props.handleChangeSalida} value={props.valueSalida}/>
                 </div>
             </div>
+
+            <button onClick={handleClick}> BUSCAR TODOS </button>
+            {/* <Link to={{pathname:"/search", state: {name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}}}> BUSCAR TODOS </Link> 
+            <Link to={{pathname:"/search", state: {name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}}}> BUSCAR POR FILTROS </Link>  */}
         </div>
     )
 }

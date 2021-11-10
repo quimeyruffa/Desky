@@ -8,7 +8,7 @@ export const SearchBar = (props) => {
             <div className="contenedor-blanco lupa">
                 <div className='busqueda'>
                     <SearchIcon/>
-                    <input className="input" type="search"/>
+                    <input handleChange={props.handleName} value={props.valueName} className="input" type="search"/>
                 </div>
             </div>
             <div className="contenedor-blanco fechas">
