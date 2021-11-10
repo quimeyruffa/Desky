@@ -28,15 +28,17 @@ export const Header = () => {
     
     return (
         <div className='header'>
-            <div className="split">
-                <div className='titulo'>
-                    <h1>DESKY</h1>
-                    <h5>TU NUEVO ESPACIO DE TRABAJO</h5>
-                </div>
-                <div className="svg">
-                    <Conjunto className='conjunto-svg' style={{zIndex:10}}/>
-                </div>
+            <div className="header-container">
+                <div className="split">
+                    <div className='titulo'>
+                        <h1>DESKY</h1>
+                        <h5>TU NUEVO ESPACIO DE TRABAJO</h5>
+                    </div>
+                    <div className="svg">
+                        <Conjunto className='conjunto-svg' style={{zIndex:10}}/>
+                    </div>
 
+                </div>
             </div>
             <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
                             valueLlegada={valueLlegada}
@@ -44,7 +46,7 @@ export const Header = () => {
                                valueSalida={valueSalida}
                                valueName = {valueName}
                                handleName = {(newValue) => handleChangeName(newValue)} />
-            <section class="container" >
+            <section className='links-container' >
                 <div className="split">
                     <div className="product-link">
                         <div className="product-circle">

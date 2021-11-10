@@ -72,11 +72,7 @@ export const Busqueda = () => {
     }
     const handleChangeName = (newValue) => {
         setValueName(newValue);
-        if (newValue.target.value === "" || newValue.target.value === null) {
-            setCoworks(coworksFallback);
-        } else {
-            setCoworks(coworks.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
-        }
+        setCoworks(coworksFallback.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
     }
     const handleAmenities = (event) => {
         const amenity = event.target.id.substring(0, event.target.id.length - 1);

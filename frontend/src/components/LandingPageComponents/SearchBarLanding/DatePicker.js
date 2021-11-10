@@ -23,7 +23,7 @@ export const  DatePicker = (props) => {
                 value={props.value}
                 onChange={props.handleChange}
                 renderInput={({ inputRef, inputProps, InputProps }) => (
-                    <div className={"picker " + props.className}>
+                    <div className={"home-picker " + props.className}>
                         {InputProps?.endAdornment}
                         <input disabled ref={inputRef} {...inputProps} className="input-fecha-mui-landing" value={props.value.toLocaleDateString("es-ES",options)}/>
                     </div>

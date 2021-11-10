@@ -72,15 +72,28 @@ width: 100vw !important;
 }
 
 .split{
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: column;
 }
-.split> *{
-  flex-basis: 100%;
-}
+
+
+
 .split> *+*{
-  margin-left: 4em;
-  margin-top: 0em;
+	margin-top: 2em;
+}
+
+@media (min-width: 50em){
+	.split{
+		flex-direction: row;
+
+	}
+	.split> *{
+		flex-basis: 100%;
+	}
+	.split> *+*{
+		margin-left: 4em;
+		margin-top: 0em;
+	}
 }
 .product-link{
   display: flex;
