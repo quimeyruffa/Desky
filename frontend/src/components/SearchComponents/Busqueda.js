@@ -10,8 +10,13 @@ import {SearchHeader} from "../Headers/SearchHeader";
 import {OrderBy} from "./OrderBy/OrderBy"
 import { DropdwAmenities } from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
+import { useHistory } from "react-router";
 
 export const Busqueda = () => {
+    const [data, setData] = useState ([]);
+    const history = useHistory()
+    const estado = history.location.state;
+    
 
     const [datos, setDatos] = useState([
         {
@@ -172,7 +177,8 @@ export const Busqueda = () => {
             ]
         }
     ]);
-    const [valueLlegada, setValueLlegada] = React.useState(new Date());
+    const [valueLlegada, setValueLlegada] = useState(new Date());
+    const [valueName, setValueName] = useState("");
     const [valueSalida, setValueSalida] = useState(new Date());
     const [ordenarPor, setOrdenarPor] = useState("elegir");
     const [rangoPrecios, setRangoPrecios] = useState([5000, 70000]);
@@ -201,7 +207,9 @@ export const Busqueda = () => {
     const handleOrderBy = (event) => {
         setOrdenarPor(event.target.value);
     }
-
+    const handleChangeName = (newValue) => {
+        setValueName(newValue);
+    }
     const handleAmenities = (event) => {
         const amenity = event.target.id.substring(0, event.target.id.length-1);
         setAmenities({...amenities, [amenity] : !amenities[amenity]});
@@ -210,6 +218,17 @@ export const Busqueda = () => {
     const handleChangeDropdownMiembros = (miembros, oficina) => {
         setMiembros(miembros);
         setOficina(oficina);
+    }
+    const uri = 'http://localhost:3000';
+    const handleClickButton = () =>{
+        fetch(`${uri}/coworksInPriceRange`, {
+            method: 'GET',
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            
+        })
+        
     }
 
 
@@ -236,6 +255,7 @@ export const Busqueda = () => {
     //         setDatos(copia);
     //     }
     // };
+ 
 
     return (
         <>
@@ -246,10 +266,12 @@ export const Busqueda = () => {
                     <SearchBar handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
                                valueLlegada={valueLlegada}
                                handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
-                               valueSalida={valueSalida}/>
+                               valueSalida={valueSalida}
+                               valueName = {valueName}
+                               handleName = {(newValue) => handleChangeName(newValue)}/>
                     <DropdwOffice handleChange={handleChangeDropdownMiembros}/>
                     <DropdwAmenities handleAmenities={handleAmenities}/>
-                    <Link to="/" class="botonSearch"> Buscar </Link>
+                    <button onClick={handleClickButton} className="botonSearch"> Buscar </button>
                 </div>
                 <div className="filters">
                     <OrderBy handleChange={handleOrderBy}/>
@@ -269,12 +291,6 @@ export const Busqueda = () => {
                                             amenities={oficina.diferencial}/>)
                     }))
                 })}
-
-                <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
-                <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
-                <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
-                <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
-                <SearchCard  className="cw-card" nombre={"a"} promedioPuntos={2.5} direccion={"alfjlasf"} precio={"0"} amenities={[]}/>
             </div>
             <Footer/>
         </>

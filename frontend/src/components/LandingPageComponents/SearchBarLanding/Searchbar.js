@@ -4,7 +4,7 @@ import {DatePicker} from "./DatePicker";
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router';
 export const SearchBar = (props) => {
-    const history = useHistory()
+    const history = useHistory();
     const handleClick = () =>{
         history.push("/search", JSON.stringify({name: props.valueName, llegada: props.valueLlegada, salida: props.valueSalida}));
     }
