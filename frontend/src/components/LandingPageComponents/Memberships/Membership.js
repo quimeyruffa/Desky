@@ -67,7 +67,7 @@ const ContainerCards = styled.div`
     @media (min-width: 50em){
         flex-direction:row;
     }
-
+`
 const Container = styled.div`
     width:80%;
     border-radius:25px;
