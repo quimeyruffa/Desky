@@ -6,7 +6,7 @@ exports.getOficinas = async (query) => {
 };
 
 exports.getOficinasInOrderByRecommendations =  async (order) => {
-    const res = await oficina.find({}).sort({"puntosPromedio": order});
+    const res = await oficina.find({}).sort({"promedioPuntos": order});
     return res;
 };
 

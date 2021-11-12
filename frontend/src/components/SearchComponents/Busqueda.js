@@ -15,9 +15,8 @@ import {useHistory} from "react-router";
 export const Busqueda = () => {
     const history = useHistory()
     const uri = 'http://localhost:3000';
-    const [coworks, setCoworks] = useState([]);
-    const [coworksFallback, setCoworksFallback] = useState([]);
-    const [datosOficinas, setDatosOficinas] = useState([]);
+    const [oficinas, setOficinas] = useState([]);
+    const [oficinasFallback, setOficinasFallback] = useState([]);
     const [valueLlegada, setValueLlegada] = useState(new Date());
     const [valueName, setValueName] = useState("");
     const [valueSalida, setValueSalida] = useState(new Date());
@@ -42,13 +41,13 @@ export const Busqueda = () => {
         if (nombre !== "") {
 
         } else {
-            fetch(`${uri}/coworks`, {
+            fetch(`${uri}/oficinas`, {
                 method: 'GET',
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    setCoworks(data);
-                    setCoworksFallback(data);
+                    setOficinas(data);
+                    setOficinasFallback(data);
                 }).catch(e => {
                 console.log(e);
             })
@@ -72,7 +71,7 @@ export const Busqueda = () => {
     }
     const handleChangeName = (newValue) => {
         setValueName(newValue);
-        setCoworks(coworksFallback.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
+        setOficinas(oficinasFallback.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
     }
     const handleAmenities = (event) => {
         const amenity = event.target.id.substring(0, event.target.id.length - 1);
@@ -85,14 +84,23 @@ export const Busqueda = () => {
     }
 
 
-    const handleClickButton = () => {
-        fetch(`${uri}/coworksInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
+    const handleClickButton = async () => {
+        let datos = [];
+        const response = await fetch(`${uri}/oficinasInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
             method: 'GET',
         })
-            .then((res) => res.json())
-            .then((data) => {
-                setCoworks(data);
-            })
+        const data = await response.json();
+        datos = data;
+
+        if (ordenarPor === "recomendados") {
+            let aux = datos.slice();
+            aux.sort((a, b) => {
+                return b.promedioPuntos - a.promedioPuntos
+            });
+            datos = aux;
+        }
+
+        setOficinas(datos);
 
     }
 
@@ -145,16 +153,13 @@ export const Busqueda = () => {
             </div>
 
             <div className="cards-coworks scrollable">
-                {coworks.map((cowork, index) => {
+                {oficinas.map((oficina, index) => {
+                    return (<SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork + " - " + oficina.tipo}
+                                        promedioPuntos={oficina.promedioPuntos}
+                                        direccion={oficina.direccion.streetAddress}
+                                        precio={oficina.precio}
+                                        amenities={oficina.amenities}/>)
 
-                    return (cowork.tipo && cowork.tipo.map((oficina, index) => {
-                        return (<SearchCard className="cw-card" key={index} nombre={cowork.nombre}
-                                            promedioPuntos={cowork.promedioPuntos}
-                                            direccion={cowork.direccion.streetAddress}
-                                            precio={oficina.precio}
-                                            amenities={oficina.diferencial}/>)
-
-                    }))
                 })}
             </div>
             <Footer/>
