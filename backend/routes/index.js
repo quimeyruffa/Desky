@@ -2,6 +2,7 @@ var express = require('express');
 const mongoose = require("mongoose");
 var router = express.Router();
 const CoworkController = require('../controllers/cowork.controller');
+
 const userRoute = require("./users");
 
 /* GET home page. */
@@ -12,5 +13,6 @@ router.get('/', function(req, res, next) {
 router.get("/coworksInPriceRange", CoworkController.getCoworksInPriceRange);
 router.get("/coworksInDateRange", CoworkController.getCoworksInDateRange);
 router.get("/coworksByRecommendations", CoworkController.getCoworksInOrderByRecommendation);
+router.get("/coworks", CoworkController.getAllCoworks);
 
 module.exports = router;

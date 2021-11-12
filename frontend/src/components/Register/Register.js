@@ -58,12 +58,12 @@ export const Register = () => {
                     <br />
                     <ContainerInput>
                         <Input width={'300px'} size={'100px'}>
-                            <span>Password</span>
+                            <span>Contraseña</span>
                             <input type="password" onChange={(e) => setPassword(e.target.value)} />
                         </Input>
 
                         <Input width={'300px'} size={'200px'} style={{ marginLeft: '99px' }}>
-                            <span>Re enter-password</span>
+                            <span>Reingresar contraseña</span>
                             <input type="password" onChange={(e) => setRepassword(e.target.value)} />
                         </Input>
                     </ContainerInput>

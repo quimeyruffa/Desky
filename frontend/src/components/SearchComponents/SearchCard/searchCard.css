@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 600px;
+    width: 50%;
     border-radius: 10px;
     border: 1px #B9B7B7 solid;
 }
@@ -38,9 +38,11 @@ p.nombre {
     font-size: 23px;
 }
 
-img {
+.cowork-img {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    object-fit: cover;
+    height: 100%;
 }
 
 .ver {
@@ -56,6 +58,7 @@ img {
     background-color: #4B03BA;
     color: #FFFFFF;
     font-size: 1.3em;
+    margin: 0
 }
 
 .btn-ver:hover {
@@ -68,4 +71,11 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 430px) {
+    .cowork-img {
+        width: 33%;
+
+    }
 }
