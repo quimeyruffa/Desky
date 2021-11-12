@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("/oficinasInPriceRange", OficinaController.getCoworksInPriceRange);
-router.get("/oficinasInDateRange", OficinaController.getCoworksInDateRange);
-router.get("/oficinasByRecommendations", OficinaController.getCoworksInOrderByRecommendation);
-router.get("/oficinas", OficinaController.getAllCoworks);
+router.get("/oficinasInPriceRange", OficinaController.getOficinasInPriceRange);
+router.get("/oficinasInDateRange", OficinaController.getOficinasInDateRange);
+router.get("/oficinasByRecommendations", OficinaController.getOficinasInOrderByRecommendation);
+router.get("/oficinas", OficinaController.getAllOficinas);
 
 module.exports = router;
