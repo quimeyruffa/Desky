@@ -2,7 +2,7 @@ var express = require('express');
 const mongoose = require("mongoose");
 var router = express.Router();
 const CoworkController = require('../controllers/cowork.controller');
-const userRoute = require("./route/user");
+const userRoute = require("./users");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
