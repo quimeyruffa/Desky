@@ -100,6 +100,14 @@ export const Busqueda = () => {
             datos = aux;
         }
 
+        else if (ordenarPor === "precio") {
+            let aux = datos.slice();
+            aux.sort((a, b) => {
+                return b.precio - a.precio;
+            })
+            datos = aux;
+        }
+
         setOficinas(datos);
 
     }
