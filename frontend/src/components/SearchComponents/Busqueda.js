@@ -1,7 +1,7 @@
 import {SearchCard} from "./SearchCard/SearchCard";
 import Slider from "./Slider/Slider";
 import React, {useEffect, useState} from "react";
-import {SearchBar} from "./SearchBar/Searchbar";
+import {SearchBar} from "../SearchComponents/Searchbar/Searchbar.js";
 import './busqueda.css'
 import {Link} from "react-router-dom";
 import Navbar from "../Navbar/Navbar";

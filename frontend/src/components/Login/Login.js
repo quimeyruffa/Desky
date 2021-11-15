@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Svg from '../../assets/SVG/FondoLogin.svg';
 import { ReactComponent as LogoDesky } from '../../assets/SVG/LogoDesky.svg';
 import { IoPersonOutline } from 'react-icons/io5';
 import { FiLock } from 'react-icons/fi';
 export const Login = () => {
+    const [user, setUser] = useState();
+    const [password, setPassword] = useState();
+
+    const Submit = async () => {
+    
+         await fetch('http://localhost:3000/users/login', {
+             method: 'POST',
+             headers: {
+                 'Accept': 'application/json',
+                 'Content-Type': 'application/json',
+             },
+             body: JSON.stringify({
+                 username:user,
+                 password:password
+             })
+         }).then(function(data){ console.log(data) })
+         
+     }
     return (
         <LoginContainer>
             <br /> <br />  <br />
@@ -12,14 +30,14 @@ export const Login = () => {
             <br />
             <Input>
                 <IoPersonOutline className='icon' />
-                <input type="text" placeholder="USERNAME"/>
+                <input type="text" placeholder="USERNAME" onClick={(e)=>setUser(e.target.value)} />
             </Input>
             <Input>
                 <FiLock className='icon' />
-                <input type="text" placeholder="PASSWORD"/>
+                <input type="password" placeholder="PASSWORD" onClick={(e)=>setPassword(e.target.value)}/>
             </Input>
             <br /> <br />
-            <Button>Login</Button>
+            <Button onClick={Submit}>Login</Button>
             <br />
             <p>Or</p>
             <br />
@@ -63,6 +81,7 @@ const Input = styled.div`
         border-radius:5px;
         background-color:transparent;
         padding:0.5em;
+        padding-left:2.5em;
         ::placeholder {
             color: white;
             text-align: center;

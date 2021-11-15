@@ -7,7 +7,7 @@ import {WavesFooter} from "../../assets/images/WavesFooter";
 
 export const Footer = () => {
     return (
-        <div className="div-footer">
+        <div className="div-footer" style={{ background:'#E5E5E5'}}>
                 <footer>
                     <div className="footer-column">
                         <a>Quienes Somos</a>

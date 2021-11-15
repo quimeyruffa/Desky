@@ -11,8 +11,8 @@ export const Register = () => {
     const [repassword, setRepassword] = useState('');
 
     const Submit = async () => {
-        console.log('llegue')
-        await fetch('http://localhost:3000/register', {
+       console.log(name, email, password)
+        await fetch('http://localhost:3000/users/register', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -24,7 +24,8 @@ export const Register = () => {
                 email: email,
                 password: password
             })
-        }).then(function(data){ console.log(  data ) });
+        }).then(function(data){ console.log(data) })
+        
     }
     return (
         <ContainerRegister>
