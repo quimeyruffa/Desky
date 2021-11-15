@@ -6,6 +6,7 @@ const ReservaSchema = new mongoose.Schema({
     Confirmado: Boolean,
     fechaIni: Date,
     fechaFin: Date,
+    cantPersonas: Number,
     idOficina: String,
     idCowork: String
 })
