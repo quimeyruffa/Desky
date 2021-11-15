@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { IconLogo, IconLogoMobile, Menu, MenuItem, MenuItemLink, NavBarContainer, NavbarWrapper } from './Navbar.elements'
 import Logo from "../../assets/images/Logo";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import { BsFillBellFill } from 'react-icons/bs'
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
@@ -26,6 +26,12 @@ const Navbar = () => {
                     <MenuItem className="sign-in">
                             <MenuItemLink className="sign-in-link" >
                                 SIGN-IN
+                            </MenuItemLink>  
+                    </MenuItem>
+                    <MenuItem className="sign-in">
+                            <MenuItemLink className="sign-in-link" >
+                            
+                            < BsFillBellFill className='button'  />
                             </MenuItemLink>  
                     </MenuItem>
                     <Menu click = {click}>
@@ -54,6 +60,7 @@ const Navbar = () => {
                                 SIGN-IN
                             </MenuItemLink>  
                         </MenuItem>
+                        
                     </Menu>
                 </NavbarWrapper> 
             </NavBarContainer>
