@@ -6,12 +6,14 @@ import { Clients } from './components/LandingPageComponents/Clients/Clients';
 import CarouselComponent from './components/LandingPageComponents/Carousel/Carousel';
 import './index.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-
-import { SearchBar } from './components/SearchComponents/Searchbar/Searchbar.js';
 import {Busqueda} from './components/SearchComponents/Busqueda'
 import Membership from './components/LandingPageComponents/Memberships/Membership';
+
+
+
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
+
 function App() {
   return (
     <div className="App">
@@ -34,10 +36,8 @@ function App() {
                     <Footer />
                 </Route>
                 <Route path="/search">
-                    {/*<Navbar />*/}
                     <Busqueda />
                 </Route>
-                {/* Probando la barra de busqueda*/}
             </Switch>
         </BrowserRouter>
     </div>

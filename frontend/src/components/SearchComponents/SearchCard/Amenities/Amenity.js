@@ -20,5 +20,7 @@ export const Amenity = (props) => {
             return <DiningIcon />
         case "coffee":
             return <CoffeeIcon />
+        default:
+            return null;
     }
 }
