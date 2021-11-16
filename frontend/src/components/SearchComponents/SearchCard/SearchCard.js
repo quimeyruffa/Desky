@@ -14,8 +14,9 @@ export const SearchCard = (props) => {
                         width="220px" height="160px"
                         className="cowork-img"/>
                     <div className="datosCowork">
-                        <p className="nombre">{props.nombre}</p>
-                        <Rating name="read-only" value={props.promedioPuntos} precision={0.1} readOnly />
+                        <p className="nombre" style={{marginBottom: "0"}}>{props.nombre}</p>
+                        <p className="nombre" style={{fontSize: "15px", fontWeight: "normal"}}>{props.tipo}</p>
+                        <Rating name="read-only" value={props.promedioPuntos} precision={0.1} readOnly/>
                         <p>{props.direccion}</p>
                         <div className="amenities">
                             {props.amenities.map((amenity, index) => {
@@ -27,7 +28,7 @@ export const SearchCard = (props) => {
                 </div>
                 <div className="ver">
                     <Link to="/" className="btn-ver">VER</Link>
-                    <p>{"$" + props.precio}</p>
+                    <p style={{fontSize:"22px"}}>{"$" + props.precio}</p>
                 </div>
             </div>
         </div>

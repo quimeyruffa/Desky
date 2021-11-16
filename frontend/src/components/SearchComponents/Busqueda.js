@@ -162,9 +162,10 @@ export const Busqueda = () => {
 
             <div className="cards-coworks scrollable">
                 {oficinas.map((oficina, index) => {
-                    return (<SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork + " - " + oficina.tipo}
+                    console.log(oficina);
+                    return (<SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
                                         promedioPuntos={oficina.promedioPuntos}
-                                        direccion={oficina.direccion.streetAddress}
+                                        direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
                                         precio={oficina.precio}
                                         amenities={oficina.amenities}/>)
 
