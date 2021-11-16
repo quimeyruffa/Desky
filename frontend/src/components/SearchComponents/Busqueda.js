@@ -71,7 +71,6 @@ export const Busqueda = () => {
     }
     const handleChangeName = (newValue) => {
         setValueName(newValue);
-        setOficinas(oficinasFallback.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
     }
     const handleAmenities = (event) => {
         const amenity = event.target.id.substring(0, event.target.id.length - 1);
@@ -85,31 +84,80 @@ export const Busqueda = () => {
 
 
     const handleClickButton = async () => {
-        let datos = [];
-        const response = await fetch(`${uri}/oficinasInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
-            method: 'GET',
-        })
-        const data = await response.json();
-        datos = data;
+
+        let datos = await filtroRangoPrecios();
+
+        datos = filtroNombre(datos);
+
+        datos = filtroOficinasYMiembros(datos);
 
         if (ordenarPor === "recomendados") {
-            let aux = datos.slice();
-            aux.sort((a, b) => {
-                return b.promedioPuntos - a.promedioPuntos
-            });
-            datos = aux;
+            datos = filtroRecomendados(datos);
+
+        } else if (ordenarPor === "precio") {
+            datos = filtroPrecios(datos);
         }
 
-        else if (ordenarPor === "precio") {
-            let aux = datos.slice();
-            aux.sort((a, b) => {
-                return b.precio - a.precio;
-            })
-            datos = aux;
-        }
 
         setOficinas(datos);
 
+    }
+
+    const filtroRangoPrecios = async () => {
+        const response = await fetch(`${uri}/oficinasInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
+            method: 'GET',
+        })
+
+        return await response.json();
+    }
+
+    const filtroNombre = (data) => {
+        const search = valueName.target.value;
+        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(search.toLowerCase()));
+    }
+
+
+    const filtroOficinasYMiembros = (data) => {
+
+        let filteredData = data.slice();
+
+        if (miembros > 0 && oficina === "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.cantPersonas >= miembros;
+            });
+        } else if (miembros === 0 && oficina !== "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.tipo === oficina.toLowerCase();
+            });
+        } else if (miembros > 0 && oficina !== "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.tipo === oficina.toLowerCase() && elem.cantPersonas >= miembros;
+            });
+        }
+
+        return filteredData;
+    }
+
+    const filtroRecomendados = (data) => {
+
+        let aux = data.slice();
+
+        aux.sort((a, b) => {
+            return b.promedioPuntos - a.promedioPuntos
+        });
+
+        return aux;
+    }
+
+    const filtroPrecios = (data) => {
+
+        let aux = data.slice();
+
+        aux.sort((a, b) => {
+            return b.precio - a.precio;
+        })
+
+        return aux;
     }
 
 
@@ -161,15 +209,15 @@ export const Busqueda = () => {
             </div>
 
             <div className="cards-coworks scrollable">
-                {oficinas.map((oficina, index) => {
-                    console.log(oficina);
-                    return (<SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
-                                        promedioPuntos={oficina.promedioPuntos}
-                                        direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
-                                        precio={oficina.precio}
-                                        amenities={oficina.amenities}/>)
+                {oficinas.length !== 0 ? oficinas.map((oficina, index) => {
+                    return (
+                        <SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
+                                    promedioPuntos={oficina.promedioPuntos}
+                                    direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
+                                    precio={oficina.precio}
+                                    amenities={oficina.amenities}/>)
 
-                })}
+                }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
             </div>
             <Footer/>
         </>
