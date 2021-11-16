@@ -11,6 +11,7 @@ import {OrderBy} from "./OrderBy/OrderBy"
 import {DropdwAmenities} from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 import {useHistory} from "react-router";
+import { Amenity } from "./SearchCard/Amenities/Amenity";
 
 export const Busqueda = () => {
     const history = useHistory()
@@ -23,7 +24,7 @@ export const Busqueda = () => {
     const [ordenarPor, setOrdenarPor] = useState("elegir");
     const [rangoPrecios, setRangoPrecios] = useState([5000, 70000]);
     const [amenities, setAmenities] = useState({
-        petfriendly: false,
+        petFriendly: false,
         shop: false,
         parking: false,
         podcast: false,
@@ -83,6 +84,20 @@ export const Busqueda = () => {
         setOficina(oficina);
     }
 
+    const filtroAmenities = (datos, seleccionadas) => {
+        
+            let postFiltroAmenities = [];
+            datos.forEach((oficina) => {
+                seleccionadas.forEach((amenity) => {
+                    if(oficina.amenities.indexOf(amenity) >= 0){
+                        postFiltroAmenities.push(oficina);
+                    }
+                })  
+            }) 
+    
+            return postFiltroAmenities;
+        
+    }
 
     const handleClickButton = async () => {
         let datos = [];
@@ -91,6 +106,14 @@ export const Busqueda = () => {
         })
         const data = await response.json();
         datos = data;
+
+        //Filtro amenities 
+        let seleccionadas = Object.keys(amenities).filter((amenity) => amenities[amenity]);
+
+        if(seleccionadas.length > 0) {
+        
+            datos = filtroAmenities(datos, seleccionadas);
+        }
 
         if (ordenarPor === "recomendados") {
             let aux = datos.slice();
@@ -162,7 +185,6 @@ export const Busqueda = () => {
 
             <div className="cards-coworks scrollable">
                 {oficinas.map((oficina, index) => {
-                    console.log(oficina);
                     return (<SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
                                         promedioPuntos={oficina.promedioPuntos}
                                         direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
