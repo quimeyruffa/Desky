@@ -8,7 +8,7 @@ import CoffeeIcon from '@mui/icons-material/Coffee';
 export const Amenity = (props) => {
 
     switch (props.type) {
-        case "petFriendly":
+        case "petfriendly":
             return <PetsIcon />
         case "podcast":
             return <PodcastsIcon />
