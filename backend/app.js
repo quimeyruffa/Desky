@@ -49,6 +49,22 @@ app.use(function(err, req, res, next) {
   res.json({ error: err })
 });
 
+//importamos el controller
+const PaymentController = require("./controllers/PaymentController");
+
+//importamos el service
+const PaymentService = require("./services/PaymentService"); 
+
+// Permitimos que el controller pueda usar el service
+const PaymentInstance = new PaymentController(new PaymentService()); 
+
+app.post("/payment/new", (req, res) => 
+  PaymentInstance.getMercadoPagoLink(req, res) 
+);
+
+app.post("/webhook", (req, res) => PaymentInstance.webhook(req, res)); 
+
+
 const mongoose = require('mongoose');
 let url = "mongodb+srv://Desky:desky@desky.pb0ux.mongodb.net/desky?retryWrites=true&w=majority";
 
