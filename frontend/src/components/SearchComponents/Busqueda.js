@@ -11,20 +11,20 @@ import {OrderBy} from "./OrderBy/OrderBy"
 import {DropdwAmenities} from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 import {useHistory} from "react-router";
+import { Amenity } from "./SearchCard/Amenities/Amenity";
 
 export const Busqueda = () => {
     const history = useHistory()
     const uri = 'http://localhost:3000';
-    const [coworks, setCoworks] = useState([]);
-    const [coworksFallback, setCoworksFallback] = useState([]);
-    const [datosOficinas, setDatosOficinas] = useState([]);
+    const [oficinas, setOficinas] = useState([]);
+    const [oficinasFallback, setOficinasFallback] = useState([]);
     const [valueLlegada, setValueLlegada] = useState(new Date());
     const [valueName, setValueName] = useState("");
     const [valueSalida, setValueSalida] = useState(new Date());
     const [ordenarPor, setOrdenarPor] = useState("elegir");
     const [rangoPrecios, setRangoPrecios] = useState([5000, 70000]);
     const [amenities, setAmenities] = useState({
-        petfriendly: false,
+        petFriendly: false,
         shop: false,
         parking: false,
         podcast: false,
@@ -42,13 +42,13 @@ export const Busqueda = () => {
         if (nombre !== "") {
 
         } else {
-            fetch(`${uri}/coworks`, {
+            fetch(`${uri}/oficinas`, {
                 method: 'GET',
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    setCoworks(data);
-                    setCoworksFallback(data);
+                    setOficinas(data);
+                    setOficinasFallback(data);
                 }).catch(e => {
                 console.log(e);
             })
@@ -72,7 +72,6 @@ export const Busqueda = () => {
     }
     const handleChangeName = (newValue) => {
         setValueName(newValue);
-        setCoworks(coworksFallback.filter((elem) => elem.nombre.toLowerCase().includes(newValue.target.value.toLowerCase())))
     }
     const handleAmenities = (event) => {
         const amenity = event.target.id.substring(0, event.target.id.length - 1);
@@ -84,43 +83,103 @@ export const Busqueda = () => {
         setOficina(oficina);
     }
 
+    
+    const handleClickButton = async () => {
 
-    const handleClickButton = () => {
-        fetch(`${uri}/coworksInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
-            method: 'GET',
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setCoworks(data);
-            })
+        let datos = await filtroRangoPrecios();
+
+        datos = filtroNombre(datos);
+
+        let seleccionadas = Object.keys(amenities).filter((amenity) => amenities[amenity]);
+
+        if(seleccionadas.length > 0) {
+        
+            datos = filtroAmenities(datos, seleccionadas);
+        }
+
+        datos = filtroOficinasYMiembros(datos);
+
+        if (ordenarPor === "recomendados") {
+            datos = filtroRecomendados(datos);
+
+        } else if (ordenarPor === "precio") {
+            datos = filtroPrecios(datos);
+        }
+
+
+        setOficinas(datos);
 
     }
 
+    const filtroRangoPrecios = async () => {
+        const response = await fetch(`${uri}/oficinasInPriceRange?min=${rangoPrecios[0]}&max=${rangoPrecios[1]}`, {
+            method: 'GET',
+        })
+        return await response.json();
+    }
 
-    // const handleChangeFiltro = (event) => {
-    //     if (event.target.value !== "nada") {
-    //
-    //         let copia = datos.slice();
-    //
-    //         copia.sort((a, b) => {
-    //             let maxA = 0;
-    //             let maxB = 0;
-    //
-    //             for (const elem of a.tipo) {
-    //                 maxA = (elem.precio > maxA) ? elem.precio : maxA;
-    //             }
-    //
-    //             for (const elem of b.tipo) {
-    //                 maxB = (elem.precio > maxB) ? elem.precio : maxB;
-    //             }
-    //
-    //             return (maxA > maxB) ? -1 : 1;
-    //         });
-    //
-    //         setDatos(copia);
-    //     }
-    // };
+    const filtroNombre = (data) => {
+        const search = valueName.target.value;
+        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(search.toLowerCase()));
+    }
 
+    const filtroAmenities = (datos, seleccionadas) => {
+        
+        let postFiltroAmenities = [];
+        datos.forEach((oficina) => {
+            seleccionadas.forEach((amenity) => {
+                if(oficina.amenities.indexOf(amenity) >= 0){
+                    postFiltroAmenities.push(oficina);
+                }
+            })  
+        }) 
+
+        return postFiltroAmenities;
+    
+    }
+
+    const filtroOficinasYMiembros = (data) => {
+
+        let filteredData = data.slice();
+
+        if (miembros > 0 && oficina === "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.cantPersonas >= miembros;
+            });
+        } else if (miembros === 0 && oficina !== "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.tipo === oficina.toLowerCase();
+            });
+        } else if (miembros > 0 && oficina !== "Cualquiera") {
+            filteredData = data.filter((elem) => {
+                return elem.tipo === oficina.toLowerCase() && elem.cantPersonas >= miembros;
+            });
+        }
+
+        return filteredData;
+    }
+
+    const filtroRecomendados = (data) => {
+
+        let aux = data.slice();
+
+        aux.sort((a, b) => {
+            return b.promedioPuntos - a.promedioPuntos
+        });
+
+        return aux;
+    }
+
+    const filtroPrecios = (data) => {
+
+        let aux = data.slice();
+
+        aux.sort((a, b) => {
+            return b.precio - a.precio;
+        })
+
+        return aux;
+    }
 
     return (
         <>
@@ -145,17 +204,15 @@ export const Busqueda = () => {
             </div>
 
             <div className="cards-coworks scrollable">
-                {coworks.map((cowork, index) => {
+                {oficinas.length !== 0 ? oficinas.map((oficina, index) => {
+                    return (
+                        <SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
+                                    promedioPuntos={oficina.promedioPuntos}
+                                    direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
+                                    precio={oficina.precio}
+                                    amenities={oficina.amenities}/>)
 
-                    return (cowork.tipo && cowork.tipo.map((oficina, index) => {
-                        return (<SearchCard className="cw-card" key={index} nombre={cowork.nombre}
-                                            promedioPuntos={cowork.promedioPuntos}
-                                            direccion={cowork.direccion.streetAddress}
-                                            precio={oficina.precio}
-                                            amenities={oficina.diferencial}/>)
-
-                    }))
-                })}
+                }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
             </div>
             <Footer/>
         </>

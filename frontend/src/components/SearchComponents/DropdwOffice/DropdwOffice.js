@@ -5,7 +5,7 @@ import {useState} from "react";
 export const DropdwOffice = (props) => {
 
     const [miembros, setMiembros] = useState(0);
-    const [oficina, setOficina] = useState("Oficina")
+    const [oficina, setOficina] = useState("Cualquiera")
     const [click, setClick] = useState(false);
 
     const handleClickInput = (event) => {
@@ -51,12 +51,11 @@ export const DropdwOffice = (props) => {
                 </div>
                 <div className="dropdown-office-body-offices">
                     <select className="offices" onChange={handleSelect}>
-                        <option value="Oficina">Oficina</option>
+                        <option value="Cualquiera">Cualquiera</option>
                         <option value="Espacio Abierto">Espacio Abierto</option>
                         <option value="Oficina Privada">Oficina Privada</option>
                         <option value="Sala de Reuniones">Sala de reuniones</option>
                         <option value="Eventos">Eventos</option>
-                        <option value="Cualquiera">Cualquiera</option>
                     </select>
                 </div>
             </div>
