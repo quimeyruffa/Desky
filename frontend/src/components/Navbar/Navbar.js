@@ -3,23 +3,27 @@ import { IconLogo, IconLogoMobile, Menu, MenuItem, MenuItemLink, NavBarContainer
 import Logo from "../../assets/images/Logo";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BsFillBellFill } from 'react-icons/bs'
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [click, setClick] = useState(false);
-
+    const history = useHistory();
     const ChangeClick = () => {
         setClick (!click);
     }
+
+   
     return ( 
         <>
             <NavBarContainer>
         
                <NavbarWrapper>
                    
-                    <IconLogo className="icon">
-                        <Link to="/"/>
-                        <Logo href="/" width={50} height={40} color="#511E78"/>
+                    <IconLogo className="icon" onClick={()=> history.push("/")}>
+                        <Logo width={50} height={40} color="#511E78"/>
                     </IconLogo>
+                    
+                    
                     
                     <IconLogoMobile onClick = { () => ChangeClick()}>
                         {
@@ -32,7 +36,7 @@ const Navbar = () => {
                             </MenuItemLink>  
                     </MenuItem>
                     <MenuItem className="sign-in">
-                            <MenuItemLink className="sign-in-link" >
+                            <MenuItemLink className="sign-in-link" href="/booking">
                             < BsFillBellFill className='button'  />
                             </MenuItemLink>  
                     </MenuItem>
