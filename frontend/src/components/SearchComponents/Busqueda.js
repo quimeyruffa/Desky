@@ -12,6 +12,7 @@ import {DropdwAmenities} from "./DropdwAmenities/DropdwAmenities";
 import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 import {useHistory} from "react-router";
 import { Amenity } from "./SearchCard/Amenities/Amenity";
+import Maps from "./Maps/Maps";
 
 export const Busqueda = () => {
     const history = useHistory()
@@ -213,6 +214,10 @@ export const Busqueda = () => {
                                     amenities={oficina.amenities}/>)
 
                 }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
+                <div className="maps">
+                    <Maps/>
+                </div>
+            
             </div>
             <Footer/>
         </>
