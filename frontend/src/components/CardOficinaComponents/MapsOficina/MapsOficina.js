@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useState } from 'react';
 import ReactMapGL, {Marker, Popup,GeolocateControl} from 'react-map-gl';
 
-function Maps() {
+function MapsOficina() {
   const [viewport, setViewport] = useState({
-    width: 800 ,
-    height: 1200,
+    width: "100%" ,
+    height: 320,
     latitude: -34.60373394696125,
     longitude: -58.381635006505434,
     zoom: 13
@@ -35,4 +35,4 @@ function Maps() {
   );
 }
 
-export default Maps;
+export default MapsOficina;
