@@ -1,9 +1,11 @@
+import "./login.css"
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import Svg from '../../assets/SVG/FondoLogin.svg';
 import { ReactComponent as LogoDesky } from '../../assets/SVG/LogoDesky.svg';
 import { IoPersonOutline } from 'react-icons/io5';
 import { FiLock } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 export const Login = () => {
     const [user, setUser] = useState();
     const [password, setPassword] = useState();
@@ -30,20 +32,20 @@ export const Login = () => {
             <br />
             <Input>
                 <IoPersonOutline className='icon' />
-                <input type="text" placeholder="USERNAME" onClick={(e)=>setUser(e.target.value)} />
+                <input type="text" placeholder="USUARIO" onClick={(e)=>setUser(e.target.value)} />
             </Input>
             <Input>
                 <FiLock className='icon' />
-                <input type="password" placeholder="PASSWORD" onClick={(e)=>setPassword(e.target.value)}/>
+                <input type="password" placeholder="CONTRASEÑA" onClick={(e)=>setPassword(e.target.value)}/>
             </Input>
             <br /> <br />
-            <Button onClick={Submit}>Login</Button>
+            <Button onClick={Submit}>Iniciar Sesion</Button>
             <br />
-            <p>Or</p>
+            <p>O</p>
             <br />
-            <Button>Register</Button>
+            <Link to="/register" className = 'botonRegistro'> Registro </Link>
             <br /> <br />
-            <p>Forgot Password?</p>
+            <p>¿ Olvidaste tu contraseña ?</p>
         </LoginContainer>
     )
 }
