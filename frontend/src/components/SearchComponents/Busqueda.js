@@ -121,7 +121,7 @@ export const Busqueda = () => {
 
     const filtroNombre = (data) => {
         const search = valueName.target.value;
-        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(search.toLowerCase()));
+        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(search.toLowerCase().replaceAll(" ", "")));
     }
 
     const filtroAmenities = (datos, seleccionadas) => {
