@@ -43,7 +43,12 @@
 .cw-card {
   width: 100%;
 }
-
+.columnas-cartas-mapa{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .scrollable {
   background-color: #ffff !important;
   overflow-y: scroll !important;
@@ -68,8 +73,10 @@
 }
 
 .maps {
+  margin-left: 2%;
   width: 50%;
-  float: right;
+  max-height: 700px !important;
+  
 }
 
 @media screen and (max-width: 1366px) {
@@ -95,5 +102,9 @@
   .filters {
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .maps{
+    display: none;
   }
 }

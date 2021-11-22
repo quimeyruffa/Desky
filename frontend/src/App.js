@@ -42,7 +42,7 @@ function App() {
                     <Route path="/search">
                         <Busqueda />
                     </Route>
-                    <Route path="/test">
+                    <Route path="/detalles">
                         <DetalleCardOficina/>
                     </Route>
                 </Switch>

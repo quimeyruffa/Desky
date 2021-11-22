@@ -203,21 +203,22 @@ export const Busqueda = () => {
                 </div>
 
             </div>
+            <div className = 'columnas-cartas-mapa'>
+                <div className="cards-coworks scrollable">
+                    {oficinas.length !== 0 ? oficinas.map((oficina, index) => {
+                        return (
+                            <SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
+                                        promedioPuntos={oficina.promedioPuntos}
+                                        direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
+                                        precio={oficina.precio}
+                                        amenities={oficina.amenities}/>)
 
-            <div className="cards-coworks scrollable">
-                {oficinas.length !== 0 ? oficinas.map((oficina, index) => {
-                    return (
-                        <SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
-                                    promedioPuntos={oficina.promedioPuntos}
-                                    direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
-                                    precio={oficina.precio}
-                                    amenities={oficina.amenities}/>)
-
-                }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
+                    }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
+                    
+                </div>
                 <div className="maps">
                     <Maps/>
                 </div>
-            
             </div>
             <Footer/>
         </>

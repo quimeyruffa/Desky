@@ -5,7 +5,7 @@ import ReactMapGL, {Marker, Popup,GeolocateControl} from 'react-map-gl';
 function Maps() {
   const [viewport, setViewport] = useState({
     width: 800 ,
-    height: 1200,
+    height: 700,
     latitude: -34.60373394696125,
     longitude: -58.381635006505434,
     zoom: 13
