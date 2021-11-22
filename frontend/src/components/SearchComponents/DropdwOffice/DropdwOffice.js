@@ -24,7 +24,7 @@ export const DropdwOffice = (props) => {
 
     const handleClickClick = (event) => {
         setClick(!click);
-        props.handleChange(miembros, oficina);
+        props.handleChange && props.handleChange(miembros, oficina);
     }
 
     return (

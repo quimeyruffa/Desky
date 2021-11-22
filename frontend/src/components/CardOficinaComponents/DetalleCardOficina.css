@@ -1,0 +1,66 @@
+.carrusel-detalle {
+    width: 60vw !important;
+    margin-left: 5%;
+}
+
+.titulo-detalle {
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+.titulo-detalle h1 {
+    font-size: 80px !important;
+}
+
+.amenities-detalle {
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.container-mapa-detalles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.boton-reserva-detalle {
+    width: 350px;
+    height: 400px;
+    background: rgba(196, 196, 196, 0.35);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-carrusel-detalle {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.boton-reserva-detalle-cowork {
+    background: #8642FF;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 40px;
+    font-family: Roboto;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 1.2em;
+}
+
+.precio {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 768px){
+    .mapa {
+        display: none;
+    }
+}

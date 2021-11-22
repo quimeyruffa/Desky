@@ -1,45 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+
 .AmenitiesOficina-container{
     display: flex;
-    padding-top:7em;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 4%;
 }
 
-.matriz{
+.matriz-detalle{
     display:flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;
 }
 
-.matriz div{
-    width:25%;
+.matriz-detalle div{
+    width:100%;
     
 }
 
-.matriz div img.circulo{
-    height:100px;
-    width:100px;
-    position: relative;
-}
-.matriz div .img{
-    height:50px;
-    width:100px;
+.amenities-detalle-gris {
+    display: flex;
+    flex-direction: row;
 }
 
-.matriz div  .borde{
+.matriz-detalle div  .borde-detalle{
     display:flex;
     align-items: center;
     justify-content:center;
-    width:300px;
-    height: 200px;
-    margin:15px;
+    width:125px;
+    height: 100px;
     border-radius:0px;
-    background-color: rgb(218,204,245)
-}
-
-a{
-    font-size: large;
+    background-color: #C4C4C4;
+    margin: 10px;
 }

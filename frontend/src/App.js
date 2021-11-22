@@ -11,7 +11,8 @@ import Membership from './components/LandingPageComponents/Memberships/Membershi
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
 import { Bookings } from './components/Bookings/Bookings';
-import {DetalleCardOficina} from "./components/CardOficinaComponents/DetalleCardOficina"
+import {DetalleCardOficina} from "./components/CardOficinaComponents/DetalleCardOficina";
+
 function App() {
     return (
         <div className="App">
@@ -41,8 +42,8 @@ function App() {
                     <Route path="/search">
                         <Busqueda />
                     </Route>
-                    <Route>
-                        <DetallesCowork/>
+                    <Route path="/test">
+                        <DetalleCardOficina/>
                     </Route>
                 </Switch>
             </BrowserRouter>

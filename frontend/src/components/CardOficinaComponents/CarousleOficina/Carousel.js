@@ -7,7 +7,7 @@ import {
   CarouselCaption
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FondoCarousel from '../../../assets/images/fondoCarousel.png'
+import FondoCarousel from '../../../assets/images/foto-cowork-detalle.png'
 const items = [
   {
     
@@ -57,7 +57,7 @@ const CarouselComponent = (props) => {
   return (
       
     <Carousel
-    
+        {...props}
       activeIndex={activeIndex}
       next={next}
       previous={previous}

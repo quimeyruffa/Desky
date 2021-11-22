@@ -4,7 +4,7 @@ import ReactMapGL, {Marker, Popup,GeolocateControl} from 'react-map-gl';
 
 function MapsOficina() {
   const [viewport, setViewport] = useState({
-    width: "100%" ,
+    width: "1000px",
     height: 320,
     latitude: -34.60373394696125,
     longitude: -58.381635006505434,
@@ -17,7 +17,7 @@ function MapsOficina() {
   };
   
   return (
-    <div className="App">
+    <div className="App" style={{marginLeft: "5%", marginBottom: "5%"}}>
        <ReactMapGL
       {...viewport}
       mapboxApiAccessToken ={process.env.REACT_APP_MAPBOX}
