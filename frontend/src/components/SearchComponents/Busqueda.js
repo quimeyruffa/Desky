@@ -221,7 +221,7 @@ export const Busqueda = () => {
                                         precio={oficina.precio}
                                         amenities={oficina.amenities}
                                         handleClick = {handleClick}
-                                        idCowork={oficina.idCowork} />)
+                                        idCowork={oficina.idCowork} idOficina={oficina.idOficina}/>)
 
                     }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
                     

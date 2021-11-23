@@ -2,7 +2,7 @@ import {gapi} from 'gapi-script'
 import {useEffect, useState} from "react";
 
 
-function Calendar({id_coworking, className}) {
+function Calendar({id_coworking, className, id_oficina}) {
     const [nombreCowork, setNombreCowork] = useState("");
     const user_email = localStorage.getItem('email');
     let fechaLlegada = new Date(localStorage.getItem('fechaIni'))
@@ -83,6 +83,24 @@ function Calendar({id_coworking, className}) {
                     })
                 })
         })
+
+        const reserva = {
+            idUsuario: localStorage.getItem("id"),
+            Vigente: true,
+            Confirmado: false,
+            fechaIni: fechaLlegada,
+            fechaFin: fechaSalida,
+            cantPeronas: 1,
+            idOficina: id_oficina,
+            idCowork: id_coworking,
+            emailUsuario: localStorage.getItem("email")
+        }
+
+        fetch(`http://localhost:8080/reserva`,{method: 'POST',headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+
+            }, body: JSON.stringify(reserva)});
     }
 
 

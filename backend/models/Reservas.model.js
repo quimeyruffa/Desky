@@ -7,7 +7,7 @@ const ReservaSchema = new mongoose.Schema({
     fechaIni: Date,
     fechaFin: Date,
     cantPersonas: Number,
-    idOficina: String,
+    idOficina: Number,
     idCowork: String,
     emailUsuario: String
 })

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 export default function Cards({
-    // coworking_name, coworking_direccion, 
-    // coworking_price, coworking_date,
-    // coworking_amenities,
+    coworking_name, coworking_direccion,
+    coworking_price, coworking_date,
+    coworking_amenities,
     coworking_img,
     state
 }) {
@@ -15,12 +15,11 @@ export default function Cards({
             <ContainerData>
                 <Div>
                     <div>
-                        <P> Music Hub </P>
+                        <P>{coworking_name}</P>
                     </div>
 
-                    <div>Bonpland 1937, Palermo</div>
+                    <div>{coworking_direccion}</div>
 
-                    <div>amenities</div>
                 </Div>
 
                 <Div>
@@ -32,11 +31,11 @@ export default function Cards({
                     </div>
 
                     <div>
-                        09/11 - 11/11
+                        {coworking_date}
                     </div>
 
                     <div>
-                        {state ?
+                        {!state ?
                         <Button width={"100%"} padding={1} text={'Pendiente Confirmacion'} color={'white'} background={'#E0610E'} acction={''} /> :
                         <Button width={"100%"} padding={1} text={'Confirmado'} color={'white'} background={'#8DB600'} acction={''} />
                         }
