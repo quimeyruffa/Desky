@@ -122,8 +122,7 @@ export const Busqueda = () => {
     }
 
     const filtroNombre = (data) => {
-        const search = valueName.target.value;
-        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(search.toLowerCase().replaceAll(" ", "")));
+        return data.filter((elem) => elem.nombreCowork.toLowerCase().replaceAll(" ", "").includes(valueName.toLowerCase().replaceAll(" ", "")));
     }
 
     const filtroAmenities = (datos, seleccionadas) => {
@@ -184,9 +183,8 @@ export const Busqueda = () => {
         return aux;
     }
 
-    const handleClick = (props) => {
-        console.log(props)
-        history.push("/detalles", {datos: props, llegada:valueLlegada, salida:valueSalida})
+    const handleClick = (data) => {
+        history.push("/detalles", {datos: data, llegada:valueLlegada, salida:valueSalida, miembros: miembros});
     }
 
 
@@ -200,7 +198,7 @@ export const Busqueda = () => {
                                valueLlegada={valueLlegada}
                                handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
                                valueSalida={valueSalida}
-                               handleName={(newValue) => handleChangeName(newValue)}/>
+                               handleName={(newValue) => handleChangeName(newValue.target.value)}/>
                     <DropdwOffice handleChange={handleChangeDropdownMiembros}/>
                     <DropdwAmenities handleAmenities={handleAmenities}/>
                     <button onClick={handleClickButton} className="botonSearch"> Buscar</button>
@@ -230,10 +228,6 @@ export const Busqueda = () => {
                 </div>
             </div>
             <Footer/>
-
-            {
-                datosAMandar && <DetalleCardOficina nombre={datosAMandar.nombre} tipo={datosAMandar.tipo} precio={datosAMandar.precio} direccion={datosAMandar.direccion} llegada={valueLlegada} salida={valueSalida} amenities={datosAMandar.amenities}/> 
-            }
         </>
     )
 }

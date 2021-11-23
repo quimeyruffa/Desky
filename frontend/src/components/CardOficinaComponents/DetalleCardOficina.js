@@ -14,7 +14,8 @@ import { useHistory } from "react-router";
 
 export const DetalleCardOficina = () => {
     const history = useHistory();
-    const [info, setInfo] = useState([])
+    const data = history.location.state;
+
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
     };
@@ -23,29 +24,32 @@ export const DetalleCardOficina = () => {
         setValueSalida(newValue);
     }
 
-    const [valueLlegada, setValueLlegada] = useState(new Date());
-    const [valueSalida, setValueSalida] = useState(new Date());
-
-    setInfo(history.location.state);
-    
+    const [valueLlegada, setValueLlegada] = useState(data.llegada);
+    const [valueSalida, setValueSalida] = useState(data.salida);
+    const [miembros, setMiembros] = useState(0);
+    const [oficina, setOficina] = useState("Cualquiera");
+    const handleChangeDropdownMiembros = (miembros, oficina) => {
+        setMiembros(miembros);
+        setOficina(oficina);
+    }
 
     return (
         <>
             <Navbar/>
             <SearchHeader/>
             <div className="titulo-detalle">
-                <h1>{`${info.datos.nombre} - ${info.datos.tipo} `}</h1>
-                <h5 style={{display: "flex", alignItems: "center"}}><GrLocation/>{info.datos.direccion}</h5>
+                <h1>{`${data.datos.nombre} - ${data.datos.tipo} `}</h1>
+                <h5 style={{display: "flex", alignItems: "center"}}><GrLocation/>{data.datos.direccion}</h5>
             </div>
             <div className="container-carrusel-detalle">
                 <Carousel className="carrusel-detalle"/>
                 <div className="boton-reserva-detalle">
                     <FechasDetalle handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
-                                   valueLlegada={info.llegada}
+                                   valueLlegada={valueLlegada}
                                    handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
-                                   valueSalida={info.salida}/>
-                    <DropdwOffice/>
-                    <p className="precio"> ${info.datos.precio}</p>
+                                   valueSalida={valueSalida}/>
+                    <DropdwOffice miembros={data.miembros} oficina={data.datos.tipo} handleChange={handleChangeDropdownMiembros}/>
+                    <p className="precio"> ${data.datos.precio}</p>
                     <button className="boton-reserva-detalle-cowork">Reservar</button>
                 </div>
             </div>
@@ -54,11 +58,11 @@ export const DetalleCardOficina = () => {
                 <h5>Amenities</h5>
                 <p>Top 5 amenities</p>
             </div>
-            <AmenitiesOficina amenitites={["petfriendly", "podcast", "kitchen", "parking", "dining"]}/>
+            <AmenitiesOficina amenitites={data.datos.amenities}/>
             <div className="container-mapa-detalles mapa">
                 <div className="amenities-detalle">
                     <h5>Direccion</h5>
-                    <p>{info.datos.direccion}</p>
+                    <p>{data.datos.direccion}</p>
                 </div>
                 <MapaOficina/>
             </div>
