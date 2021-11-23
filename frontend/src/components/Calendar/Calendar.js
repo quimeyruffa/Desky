@@ -1,11 +1,13 @@
 import { gapi } from 'gapi-script'
 import { useEffect, useState } from "react";
-import key from './calendardesky-c6820f25ccef.json'
 
 
-function Calendar({ user_email, id_coworking, className }) {
 
-    var id_user = localStorage.getItem('id');
+function Calendar({ id_coworking, className }) {
+    const [nombreCowork, setNombreCowork] = useState("");
+    const user_email = localStorage.getItem('email');
+    const fechaLlegada = new Date(localStorage.getItem('fechaIni'))
+    const fechaSalida = new Date(localStorage.getItem('fechaFin'))
     const [email, setEmail] = useState("");
 
     var CLIENT_ID = "1019694152170-7iar05s1ad0luhu9p14jvmg966uskb9f.apps.googleusercontent.com"
@@ -13,6 +15,18 @@ function Calendar({ user_email, id_coworking, className }) {
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
     var SCOPES = "https://www.googleapis.com/auth/calendar";
 
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(`http://localhost:8080/cowork?id=${id_coworking}`, { method: 'GET' });
+            const dataCowork = await response.json();
+            setEmail(dataCowork[0].email);
+            setNombreCowork(dataCowork[0].nombre);
+            console.log("fecha",fechaLlegada.toISOString().substring(0,19));
+            console.log(dataCowork[0].email, dataCowork[0].nombre, fechaLlegada.toISOString(), fechaSalida.toISOString(), user_email)
+        }
+        fetchData();
+      }, []);
+    
     const handleClick = () => {
 
         gapi.load('client:auth2', () => {
@@ -30,22 +44,22 @@ function Calendar({ user_email, id_coworking, className }) {
             gapi.auth2.getAuthInstance().signIn()
                 .then(() => {
                     var event = {
-                        'summary': 'Solicitud de reserva WeWork',
-                        'description': 'El usuario X realizó una reserva para las siguientes fechas',
+                        'summary': `Solicitud de reserva ${nombreCowork}`,
+                        'description': `El usuario ${user_email} realizó una reserva para las siguientes fechas`,
                         'start': {
-                            'dateTime': '2021-11-24T09:00:00-07:00',
+                            'dateTime': `${fechaLlegada.toISOString().substring(0,19)}-07:00`,
                             'timeZone': 'America/Argentina/Buenos_Aires'
                         },
-                        'end': {
-                            'dateTime': '2021-11-25T17:00:00-07:00',
+                        'end': {         
+                            'dateTime': `${fechaSalida.toISOString().substring(0,19)}-07:00`,
                             'timeZone': 'America/Argentina/Buenos_Aires'
                         },
                         'recurrence': [
                             'RRULE:FREQ=DAILY;COUNT=1'
                         ],
                         'attendees': [
-                            { 'email': 'mirkobasar@gmail.com' },
-                            { 'email': user_email }
+                            { 'email': `${email}` },
+                            { 'email': `${user_email}` }
                         ],
                         'sendNotifications': true,
                         'reminders': {
@@ -69,12 +83,7 @@ function Calendar({ user_email, id_coworking, className }) {
         })
     }
 
-    useEffect(async () => {
-        const response = await fetch(`http://localhost:8080/cowork?id=${id_coworking}`, { method: 'GET' });
-        const dataCowork = await response.json();
-        setEmail(dataCowork.email);
-        console.log(dataCowork.email);
-    })
+    
 
     return (
         <button className={className} onClick={handleClick}>Reservar</button>
