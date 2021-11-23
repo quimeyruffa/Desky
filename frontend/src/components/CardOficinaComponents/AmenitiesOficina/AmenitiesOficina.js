@@ -5,10 +5,10 @@ import {Amenity} from "../../SearchComponents/SearchCard/Amenities/Amenity";
 export const AmenitiesOficina = (props) => {
 
     return (
-        <div className='AmenitiesOficina-container'>
+        <div className='AmenitiesOficina-container' >
             <div className="matriz-detalle">
                 <div className="fila">
-                        <div className="amenities-detalle-gris">
+                        <div className="amenities-detalle-gris" style={{flexWrap: "wrap"}}>
                             {props.amenitites.map((amenity, index) => {
                                 return (
                                     <div className="borde-detalle">

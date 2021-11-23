@@ -63,4 +63,26 @@
     .mapa {
         display: none;
     }
+
+    .container-carrusel-detalle {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .carrusel-detalle {
+        width: 90vw !important;
+        position: relative;
+        left: -10px;
+        margin-bottom: 30px;
+    }
+
+    .boton-reserva-detalle {
+        margin: 0;
+    }
+
+    .amenities-detalle {
+        flex-wrap: wrap;
+    }
+
 }
