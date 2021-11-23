@@ -4,6 +4,7 @@ var router = express.Router();
 const OficinaController = require('../controllers/oficina.controller');
 const UserController = require('../controllers/user.controller');
 const CoworkController = require('../controllers/cowork.controller');
+const ReservasController = require('../controllers/reservas.controller');
 
 const userRoute = require("./users");
 
@@ -18,5 +19,7 @@ router.get("/oficinasByRecommendations", OficinaController.getOficinasInOrderByR
 router.get("/oficinas", OficinaController.getAllOficinas);
 router.post("/login", UserController.getUser);
 router.get("/cowork", CoworkController.getCowork);
+router.get("/reservas", ReservasController.getReserva);
+router.post("/reserva", ReservasController.reservar);
 
 module.exports = router;
