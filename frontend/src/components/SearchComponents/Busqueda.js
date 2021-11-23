@@ -64,10 +64,12 @@ export const Busqueda = () => {
 
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
+        localStorage.setItem('fechaIni', newValue)
     };
 
     const handleChangeSalida = (newValue) => {
         setValueSalida(newValue);
+        localStorage.setItem("fechaFin", newValue);
     }
 
     const handleOrderBy = (event) => {

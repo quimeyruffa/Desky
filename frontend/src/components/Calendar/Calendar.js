@@ -1,6 +1,5 @@
 import { gapi } from 'gapi-script'
 import { useEffect, useState } from "react";
-import key from './calendardesky-c6820f25ccef.json'
 
 
 function Calendar({ user_email, id_coworking, className }) {
@@ -31,7 +30,7 @@ function Calendar({ user_email, id_coworking, className }) {
                 .then(() => {
                     var event = {
                         'summary': 'Solicitud de reserva WeWork',
-                        'description': 'El usuario X realizó una reserva para las siguientes fechas',
+                        'description': `El usuario ${id_user} realizó una reserva para las siguientes fechas`,
                         'start': {
                             'dateTime': '2021-11-24T09:00:00-07:00',
                             'timeZone': 'America/Argentina/Buenos_Aires'
@@ -44,8 +43,8 @@ function Calendar({ user_email, id_coworking, className }) {
                             'RRULE:FREQ=DAILY;COUNT=1'
                         ],
                         'attendees': [
-                            { 'email': 'mirkobasar@gmail.com' },
-                            { 'email': user_email }
+                            { 'email': 'francosiciliano35@gmail.com' },
+                           
                         ],
                         'sendNotifications': true,
                         'reminders': {
