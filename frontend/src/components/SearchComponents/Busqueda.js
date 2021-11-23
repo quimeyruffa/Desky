@@ -17,7 +17,7 @@ import { DetalleCardOficina } from "../CardOficinaComponents/DetalleCardOficina"
 
 export const Busqueda = () => {
     const history = useHistory()
-    const uri = 'http://localhost:3000';
+    const uri = 'http://localhost:8080';
     const [oficinas, setOficinas] = useState([]);
     const [oficinasFallback, setOficinasFallback] = useState([]);
     const [valueLlegada, setValueLlegada] = useState(new Date());
