@@ -25,9 +25,9 @@ export default function Cards({
 
                 <Div>
                     <div style={{ justifyContent: 'space-between' }}>
-                        <Button width={170} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={170} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={170} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
 
                     </div>
 
@@ -37,8 +37,8 @@ export default function Cards({
 
                     <div>
                         {state ?
-                        <Button width={502} padding={1} text={'Pendiente Confirmacion'} color={'white'} background={'#E0610E'} acction={''} /> :
-                        <Button width={502} padding={1} text={'Confirmado'} color={'white'} background={'#8DB600'} acction={''} />
+                        <Button width={"100%"} padding={1} text={'Pendiente Confirmacion'} color={'white'} background={'#E0610E'} acction={''} /> :
+                        <Button width={"100%"} padding={1} text={'Confirmado'} color={'white'} background={'#8DB600'} acction={''} />
                         }
 
                     </div>
@@ -52,7 +52,7 @@ const Card = styled.div`
     margin-bottom:0.7em;
     display:flex;
     flex-direction:row;
-    width:1683px;    
+    width:90%;    
     border: 1px solid #B9B7B7;
     border-radius:20px;
     background-color: #FFFFFF;
