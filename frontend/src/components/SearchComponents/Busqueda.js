@@ -17,7 +17,7 @@ import { DetalleCardOficina } from "../CardOficinaComponents/DetalleCardOficina"
 
 export const Busqueda = () => {
     const history = useHistory()
-    const uri = 'http://localhost:3000';
+    const uri = 'http://localhost:8080';
     const [oficinas, setOficinas] = useState([]);
     const [oficinasFallback, setOficinasFallback] = useState([]);
     const [valueLlegada, setValueLlegada] = useState(new Date());
@@ -64,10 +64,12 @@ export const Busqueda = () => {
 
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
+        localStorage.setItem('fechaIni', newValue)
     };
 
     const handleChangeSalida = (newValue) => {
         setValueSalida(newValue);
+        localStorage.setItem("fechaFin", newValue);
     }
 
     const handleOrderBy = (event) => {
@@ -213,12 +215,13 @@ export const Busqueda = () => {
                 <div className="cards-coworks scrollable">
                     {oficinas.length !== 0 ? oficinas.map((oficina, index) => {
                         return (
-                            <SearchCard className="cw-card" key={index} nombre={oficina.nombreCowork} tipo={oficina.tipo}
+                            <SearchCard className="cw-card" key={oficina.idCowork} nombre={oficina.nombreCowork} tipo={oficina.tipo}
                                         promedioPuntos={oficina.promedioPuntos}
                                         direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
                                         precio={oficina.precio}
                                         amenities={oficina.amenities}
-                                        handleClick = {handleClick} />)
+                                        handleClick = {handleClick}
+                                        idCowork={oficina.idCowork} />)
 
                     }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
                     

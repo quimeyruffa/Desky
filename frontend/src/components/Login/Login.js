@@ -1,5 +1,5 @@
 import "./login.css"
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Svg from '../../assets/SVG/FondoLogin.svg';
 import { ReactComponent as LogoDesky } from '../../assets/SVG/LogoDesky.svg';
@@ -9,41 +9,51 @@ import { Link } from 'react-router-dom';
 export const Login = () => {
     const [user, setUser] = useState();
     const [password, setPassword] = useState();
+    const [status, setStatus] = useState(true);
+
+
+    const redirect = () => {
+        if (status) {
+            window.location.href = '/'
+        }
+    }
 
     const Submit = async () => {
-    
-         await fetch('http://localhost:3000/users/login', {
-             method: 'POST',
-             headers: {
-                 'Accept': 'application/json',
-                 'Content-Type': 'application/json',
-             },
-             body: JSON.stringify({
-                 username:user,
-                 password:password
-             })
-         }).then(function(data){ console.log(data) })
-         
-     }
+        const response = await fetch('http://localhost:8080/login', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: user,
+                password: password
+            })
+        })
+        const content = await response.json();
+        localStorage.setItem('email', content.email);
+        localStorage.setItem('id', content._id);
+        redirect()
+    }
     return (
         <LoginContainer>
             <br /> <br />  <br />
-            <Logo/>
+            <Logo />
             <br />
             <Input>
                 <IoPersonOutline className='icon' />
-                <input type="text" placeholder="USUARIO" onClick={(e)=>setUser(e.target.value)} />
+                <input type="text" placeholder="USUARIO" onChange={(e) => setUser(e.target.value)} />
             </Input>
             <Input>
                 <FiLock className='icon' />
-                <input type="password" placeholder="CONTRASEÑA" onClick={(e)=>setPassword(e.target.value)}/>
+                <input type="password" placeholder="CONTRASEÑA" onChange={(e) => setPassword(e.target.value)} />
             </Input>
             <br /> <br />
             <Button onClick={Submit}>Iniciar Sesion</Button>
             <br />
             <p>O</p>
             <br />
-            <Link to="/register" className = 'botonRegistro'> Registro </Link>
+            <Link to="/register" className='botonRegistro'> Registro </Link>
             <br /> <br />
             <p>¿ Olvidaste tu contraseña ?</p>
         </LoginContainer>

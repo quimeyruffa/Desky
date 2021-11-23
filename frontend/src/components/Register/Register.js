@@ -12,7 +12,7 @@ export const Register = () => {
 
     const Submit = async () => {
        console.log(name, email, password)
-        await fetch('http://localhost:3000/users/register', {
+        await fetch('http://localhost:8080/users/register', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -24,7 +24,11 @@ export const Register = () => {
                 email: email,
                 password: password
             })
-        }).then(function(data){ console.log(data) })
+        }).then(function(data){ if(data.status===200){ 
+            window.location.href ='/login'
+        }else{ 
+            alert('Error al registrar el usuario')
+        }  })
         
     }
     return (
