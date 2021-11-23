@@ -20,7 +20,7 @@ const Navbar = () => {
                <NavbarWrapper>
                    
                     <IconLogo className="icon" onClick={()=> history.push("/")}>
-                        <Logo width={50} height={40} color="#511E78"/>
+                        <Logo width={50} height={40} color="#511E78" style={{cursor: "pointer"}}/>
                     </IconLogo>
                     
                     
