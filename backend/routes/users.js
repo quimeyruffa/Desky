@@ -29,21 +29,14 @@ router.post("/register", async(req,res)=>{
 //Login
 
 router.post("/login", async (req,res)=>{
+   
     try{
         //find user
         const user = await User.findOne({username:req.body.username})
-        !user && res.status(400).json("Usuario o contrasena incorrecta!");
-
-        //validate password
-        const validPassword = await bcrypt.compare(
-            req.body.password,
-            user.password
-        );
-        !validPassword && res.status(400).json("Usuario o contrasena incorrecta!");
-
         //send response
-        res.status(200).json({_id:user._id,username:username})
+       res.status(200).json({_id:user._id, email: user.email})
     }catch(err){
+        console.log(err)
         res.status(500).json(err)
     }
 });

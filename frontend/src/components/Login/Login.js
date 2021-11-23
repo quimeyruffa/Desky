@@ -12,7 +12,7 @@ export const Login = () => {
 
     const Submit = async () => {
     
-         await fetch('http://localhost:3000/users/login', {
+      const response= await fetch('http://localhost:8080/login', {
              method: 'POST',
              headers: {
                  'Accept': 'application/json',
@@ -22,8 +22,11 @@ export const Login = () => {
                  username:user,
                  password:password
              })
-         }).then(function(data){ console.log(data) })
-         
+         })
+    const content = await response.json();
+    
+    localStorage.setItem('email', content.email);
+    localStorage.setItem('id', content._id);         
      }
     return (
         <LoginContainer>
