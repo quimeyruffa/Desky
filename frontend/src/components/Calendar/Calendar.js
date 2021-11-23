@@ -49,11 +49,11 @@ function Calendar({id_coworking, className}) {
                         'summary': `Solicitud de reserva ${nombreCowork}`,
                         'description': `El usuario ${user_email} realizó una reserva para las siguientes fechas`,
                         'start': {
-                            'dateTime': `${fechaLlegada.toISOString().substring(0, 19)}-07:00`,
+                            'dateTime': `${fechaLlegada.toISOString().substring(0, 11)}00:00:00-03:00`,
                             'timeZone': 'America/Argentina/Buenos_Aires'
                         },
                         'end': {
-                            'dateTime': `${fechaSalida.toISOString().substring(0, 19)}-07:00`,
+                            'dateTime': `${fechaSalida.toISOString().substring(0, 11)}00:00:00-03:00`,
                             'timeZone': 'America/Argentina/Buenos_Aires'
                         },
                         'recurrence': [

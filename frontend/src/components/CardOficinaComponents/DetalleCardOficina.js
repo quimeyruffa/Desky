@@ -19,10 +19,12 @@ export const DetalleCardOficina = () => {
 
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
+        localStorage.setItem('fechaIni', newValue)
     };
 
     const handleChangeSalida = (newValue) => {
         setValueSalida(newValue);
+        localStorage.setItem("fechaFin", newValue);
     }
 
     const [valueLlegada, setValueLlegada] = useState(data.llegada);
