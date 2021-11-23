@@ -24,7 +24,11 @@ export const Register = () => {
                 email: email,
                 password: password
             })
-        }).then(function(data){ console.log(data) })
+        }).then(function(data){ if(data.status===200){ 
+            window.location.href ='/login'
+        }else{ 
+            alert('Error al registrar el usuario')
+        }  })
         
     }
     return (
