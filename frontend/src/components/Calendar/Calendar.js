@@ -1,5 +1,7 @@
+import {gapi} from 'gapi-script'
+
 function Calendar({ user_email, id_coworking }) {
-    var gapi = window.gapi
+
     var CLIENT_ID = "1019694152170-7iar05s1ad0luhu9p14jvmg966uskb9f.apps.googleusercontent.com"
     var API_KEY = "AIzaSyASJOlcqh_3DsmhTQKM2k9XiRb25wrdGnk"
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
