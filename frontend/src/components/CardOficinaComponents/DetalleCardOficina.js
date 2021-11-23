@@ -51,7 +51,7 @@ export const DetalleCardOficina = () => {
                                    valueSalida={valueSalida}/>
                     <DropdwOffice miembros={data.miembros} oficina={data.datos.tipo} handleChange={handleChangeDropdownMiembros}/>
                     <p className="precio"> ${data.datos.precio}</p>
-                    <button className="boton-reserva-detalle-cowork"><Calendar/></button>
+                    <Calendar className="boton-reserva-detalle-cowork" id_coworking={data.datos.idCowork} user_email={"francosiciliano35@gmail.com"}/>
                 </div>
             </div>
 

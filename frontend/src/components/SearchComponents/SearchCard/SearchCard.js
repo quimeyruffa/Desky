@@ -28,7 +28,7 @@ export const SearchCard = (props) => {
 
                 </div>
                 <div className="ver">
-                    <Button onClick={()=>props.handleClick({nombre: props.nombre, direccion: props.direccion, amenities: props.amenities, tipo: props.tipo, precio: props.precio})} className="btn-ver">VER</Button>
+                    <Button onClick={()=>props.handleClick({nombre: props.nombre, direccion: props.direccion, amenities: props.amenities, tipo: props.tipo, precio: props.precio, idCowork: props.idCowork})} className="btn-ver">VER</Button>
                     <p style={{fontSize:"22px"}}>{"$" + props.precio}</p>
                 </div>
             </div>
