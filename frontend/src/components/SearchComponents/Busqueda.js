@@ -13,6 +13,7 @@ import {DropdwOffice} from "./DropdwOffice/DropdwOffice";
 import {useHistory} from "react-router";
 import { Amenity } from "./SearchCard/Amenities/Amenity";
 import Maps from "./Maps/Maps";
+import { DetalleCardOficina } from "../CardOficinaComponents/DetalleCardOficina";
 
 export const Busqueda = () => {
     const history = useHistory()
@@ -34,6 +35,7 @@ export const Busqueda = () => {
     const [miembros, setMiembros] = useState(0);
     const [oficina, setOficina] = useState("Cualquiera");
     const [nombre, setNombre] = useState("");
+    const [datosAMandar, setDatosAMandar] = useState([]);
 
     useEffect(() => {
         setNombre(localStorage.getItem("nombre"));
@@ -182,6 +184,12 @@ export const Busqueda = () => {
         return aux;
     }
 
+    const handleClick = (props) => {
+        console.log(props)
+        history.push("/detalles", {datos: props, llegada:valueLlegada, salida:valueSalida})
+    }
+
+
     return (
         <>
             <Navbar/>
@@ -211,7 +219,8 @@ export const Busqueda = () => {
                                         promedioPuntos={oficina.promedioPuntos}
                                         direccion={oficina.direccion[0].streetAddress + ", " + oficina.direccion[0].city}
                                         precio={oficina.precio}
-                                        amenities={oficina.amenities}/>)
+                                        amenities={oficina.amenities}
+                                        handleClick = {handleClick} />)
 
                     }) : <h2 style={{marginBottom: "100px"}}>No se encontraron resultados...</h2>}
                     
@@ -221,6 +230,10 @@ export const Busqueda = () => {
                 </div>
             </div>
             <Footer/>
+
+            {
+                datosAMandar && <DetalleCardOficina nombre={datosAMandar.nombre} tipo={datosAMandar.tipo} precio={datosAMandar.precio} direccion={datosAMandar.direccion} llegada={valueLlegada} salida={valueSalida} amenities={datosAMandar.amenities}/> 
+            }
         </>
     )
 }

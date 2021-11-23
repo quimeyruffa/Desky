@@ -2,6 +2,7 @@ import './searchCard.css';
 import {Link} from "react-router-dom";
 import Rating from "@mui/material/Rating"
 import {Amenity} from "./Amenities/Amenity";
+import { Button } from 'react-bootstrap';
 
 export const SearchCard = (props) => {
 
@@ -27,7 +28,7 @@ export const SearchCard = (props) => {
 
                 </div>
                 <div className="ver">
-                    <Link to="/" className="btn-ver">VER</Link>
+                    <Button onClick={()=>props.handleClick({nombre: props.nombre, direccion: props.direccion, amenities: props.amenities, tipo: props.tipo, precio: props.precio})} className="btn-ver">VER</Button>
                     <p style={{fontSize:"22px"}}>{"$" + props.precio}</p>
                 </div>
             </div>

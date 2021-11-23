@@ -10,9 +10,11 @@ import './DetalleCardOficina.css'
 import {GrLocation} from "react-icons/all";
 import {DropdwOffice} from "../SearchComponents/DropdwOffice/DropdwOffice";
 import {FechasDetalle} from "./FechasDetalle/FechasDetalle";
+import { useHistory } from "react-router";
 
 export const DetalleCardOficina = () => {
-
+    const history = useHistory();
+    const [info, setInfo] = useState([])
     const handleChangeLlegada = (newValue) => {
         setValueLlegada(newValue);
     };
@@ -24,23 +26,26 @@ export const DetalleCardOficina = () => {
     const [valueLlegada, setValueLlegada] = useState(new Date());
     const [valueSalida, setValueSalida] = useState(new Date());
 
+    setInfo(history.location.state);
+    
+
     return (
         <>
             <Navbar/>
             <SearchHeader/>
             <div className="titulo-detalle">
-                <h1>WeWork</h1>
-                <h5 style={{display: "flex", alignItems: "center"}}><GrLocation/>Thames 1919, Palermo</h5>
+                <h1>{`${info.datos.nombre} - ${info.datos.tipo} `}</h1>
+                <h5 style={{display: "flex", alignItems: "center"}}><GrLocation/>{info.datos.direccion}</h5>
             </div>
             <div className="container-carrusel-detalle">
                 <Carousel className="carrusel-detalle"/>
                 <div className="boton-reserva-detalle">
                     <FechasDetalle handleChangeLlegada={(newValue) => handleChangeLlegada(newValue)}
-                                   valueLlegada={valueLlegada}
+                                   valueLlegada={info.llegada}
                                    handleChangeSalida={(newValue) => handleChangeSalida(newValue)}
-                                   valueSalida={valueSalida}/>
+                                   valueSalida={info.salida}/>
                     <DropdwOffice/>
-                    <p className="precio">$16.000</p>
+                    <p className="precio"> ${info.datos.precio}</p>
                     <button className="boton-reserva-detalle-cowork">Reservar</button>
                 </div>
             </div>
@@ -53,7 +58,7 @@ export const DetalleCardOficina = () => {
             <div className="container-mapa-detalles mapa">
                 <div className="amenities-detalle">
                     <h5>Direccion</h5>
-                    <p>Thames 1919, Palermo</p>
+                    <p>{info.datos.direccion}</p>
                 </div>
                 <MapaOficina/>
             </div>
