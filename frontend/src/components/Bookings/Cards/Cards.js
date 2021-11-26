@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 export default function Cards({
-    // coworking_name, coworking_direccion, 
-    // coworking_price, coworking_date,
-    // coworking_amenities,
+    coworking_name, coworking_direccion,
+    coworking_price, coworking_date,
+    coworking_amenities,
     coworking_img,
     state
 }) {
@@ -15,30 +15,29 @@ export default function Cards({
             <ContainerData>
                 <Div>
                     <div>
-                        <P> Music Hub </P>
+                        <P>{coworking_name}</P>
                     </div>
 
-                    <div>Bonpland 1937, Palermo</div>
+                    <div>{coworking_direccion}</div>
 
-                    <div>amenities</div>
                 </Div>
 
                 <Div>
                     <div style={{ justifyContent: 'space-between' }}>
-                        <Button width={170} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={170} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={170} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
 
                     </div>
 
                     <div>
-                        09/11 - 11/11
+                        {coworking_date}
                     </div>
 
                     <div>
-                        {state ?
-                        <Button width={502} padding={1} text={'Pendiente Confirmacion'} color={'white'} background={'#E0610E'} acction={''} /> :
-                        <Button width={502} padding={1} text={'Confirmado'} color={'white'} background={'#8DB600'} acction={''} />
+                        {!state ?
+                        <Button width={"100%"} padding={1} text={'Pendiente Confirmacion'} color={'white'} background={'#E0610E'} acction={''} /> :
+                        <Button width={"100%"} padding={1} text={'Confirmado'} color={'white'} background={'#8DB600'} acction={''} />
                         }
 
                     </div>
@@ -52,7 +51,7 @@ const Card = styled.div`
     margin-bottom:0.7em;
     display:flex;
     flex-direction:row;
-    width:1683px;    
+    width:90%;    
     border: 1px solid #B9B7B7;
     border-radius:20px;
     background-color: #FFFFFF;
