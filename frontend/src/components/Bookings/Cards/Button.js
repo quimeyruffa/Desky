@@ -2,14 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 export const Button = ({width, padding, text, color, background, acction}) => {
     return (
-        <Buttons width={width} padding={padding} background={background} color={color}>
+        <Buttons width={width} padding={padding} background={background} color={color} onClick={acction}>
             {text}
         </Buttons>
     )
 }
 
+
 const Buttons = styled.div`
     width: ${props => props.width};
+
     padding: ${props => props.padding}em;
     color:${props => props.color};
     display:flex;

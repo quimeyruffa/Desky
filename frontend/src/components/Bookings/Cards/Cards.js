@@ -9,6 +9,18 @@ export default function Cards({
     state
 }) {
 
+    const newPayment = async () => {
+        try{
+            const data = await fetch('http://localhost:8080/pagar', {method: 'POST', body: JSON.stringify({message: 'hola'})})
+            const dataCowork = await data.json();
+            window.open(dataCowork.urlPayment, '_blank')
+            console.log(dataCowork)
+        }catch(err){
+            console.log(err)
+        }
+       
+    }
+
     return (
         <Card>
             <Img img={coworking_img} />
@@ -24,9 +36,11 @@ export default function Cards({
 
                 <Div>
                     <div style={{ justifyContent: 'space-between' }}>
+
                         <Button width={"32%"} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={"32%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        <Button width={"32%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={() => newPayment()} />
                         <Button width={"32%"} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
+
 
                     </div>
 
