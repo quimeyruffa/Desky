@@ -7,8 +7,9 @@ const ReservaSchema = new mongoose.Schema({
     fechaIni: Date,
     fechaFin: Date,
     cantPersonas: Number,
-    idOficina: String,
-    idCowork: String
+    idOficina: Number,
+    idCowork: String,
+    emailUsuario: String
 })
 
 const Reserva = mongoose.model('Reserva', ReservaSchema, 'reservas')

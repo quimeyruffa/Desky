@@ -8,8 +8,10 @@ export const Button = ({width, padding, text, color, background, acction}) => {
     )
 }
 
-const Buttons = styled.button`
-    width: ${props => props.width}px;
+
+const Buttons = styled.div`
+    width: ${props => props.width};
+
     padding: ${props => props.padding}em;
     color:${props => props.color};
     display:flex;
