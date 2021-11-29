@@ -65,9 +65,8 @@ export default function Cards({
                 <Div>
                     <div style={{ justifyContent: 'space-between' }}>
 
-                        <Button width={"32%"} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />
-                        <Button width={"32%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={() => newPayment()} />
-                        <Button width={"32%"} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />
+                        {/*<Button width={"32%"} padding={1} text={'Ver'} color={'white'} background={'#4B03BA'} acction={''} />*/}
+                        {/*<Button width={"32%"} padding={1} text={'Cancelar'} color={'white'} background={'#4B03BA'} acction={''} />*/}
 
 
                     </div>
@@ -83,6 +82,8 @@ export default function Cards({
                             <Button width={"100%"} padding={1} text={'Confirmado'} color={'white'}
                                     background={'#8DB600'} acction={''}/>
                         }
+                        <Button width={"30%"} padding={1} text={'Pagar'} color={'white'} background={'#4B03BA'} acction={() => newPayment()} pago={true} />
+
 
                     </div>
                 </Div>
