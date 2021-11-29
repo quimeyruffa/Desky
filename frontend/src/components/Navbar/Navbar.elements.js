@@ -21,6 +21,7 @@ export const NavbarWrapper = styled.div`
     .sign-in {
         border: 0;
         margin: 0 15px;
+        
     }
 
     .icon {
@@ -86,7 +87,7 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li`
   border: 1px solid rgba(163, 183, 183, 0.5);
   height: 100%;
-  padding: 0.5rem 2.0rem;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,6 +115,7 @@ export const MenuItem = styled.li`
     
     a {
       color: #ebc08b;
+     
     }
   }
 
@@ -128,6 +130,7 @@ export const MenuItem = styled.li`
         border-bottom: 0.1rem solid #ebc08b;
         transition: 0.3s ease-in;
         color: inherit;
+        
       }
     }
   }
@@ -136,6 +139,8 @@ export const MenuItem = styled.li`
 
 export const MenuItemLink = styled.a`
     color: #511e78;
+    padding: 0.5rem 2.0rem;
+    
 
     &:hover {
       color: #ebc08b;

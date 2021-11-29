@@ -40,34 +40,34 @@ export const Register = () => {
                 <Title>Bienvenido!</Title>
                 <Body>
                     <ContainerInput>
-                        <Input width={'300px'} size={'100px'}>
+                        <Input size={'100px'}>
                             <span>Nombre</span>
                             <input type="text" onChange={(e) => setName(e.target.value)} />
                         </Input>
 
-                        <Input width={'300px'} size={'100px'} style={{ marginLeft: '99px' }}>
+                        <Input  size={'100px'} >
                             <span>Apellido</span>
                             <input type="text" onChange={(e) => setLastname(e.target.value)} />
                         </Input>
                     </ContainerInput>
                     <br />
-                    <Input width={'700px'} size={'200px'}>
+                    <Input  size={'200px'}>
                         <span>Nombre Empresa</span>
                         <input type="text" onChange={(e) => setEmpresa(e.target.value)} />
                     </Input>
                     <br />
-                    <Input width={'700px'} size={'100px'}>
+                    <Input  size={'100px'}>
                         <span>Email</span>
                         <input type="email" onChange={(e) => setEmail(e.target.value)} />
                     </Input>
                     <br />
                     <ContainerInput>
-                        <Input width={'300px'} size={'100px'}>
+                        <Input  size={'100px'}>
                             <span>Contraseña</span>
                             <input type="password" onChange={(e) => setPassword(e.target.value)} />
                         </Input>
 
-                        <Input width={'300px'} size={'200px'} style={{ marginLeft: '99px' }}>
+                        <Input  size={'200px'} >
                             <span>Reingresar contraseña</span>
                             <input type="password" onChange={(e) => setRepassword(e.target.value)} />
                         </Input>
@@ -86,6 +86,11 @@ const ContainerRegister = styled.div`
         background-color:#4B03BA;
         display:flex;
         flex-direction: row;
+        @media screen and (max-width: 768px){
+            flex-direction:column;
+
+
+        }
 `
 const Left = styled.div`
     width:50%;
@@ -94,19 +99,29 @@ const Left = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center, 50%, 50%;
+    @media screen and (max-width: 768px){
+        display:none;
+    }
 `
 const Right = styled.div`
     width:50%;
     height:100%;
     background-color:#F3F3F3;
-    padding:5em;
+    padding:2em 5em;
+    @media screen and (max-width: 768px){
+        width:100%;
+        
+    }
 `
 const Title = styled.div`
     width:100%;
     display:flex;
-    font-size:86px;
+    font-size:64px;
     font-weight:500;
     font-family: Roboto;
+    @media screen and (max-width: 768px){
+        font-size:48px;
+    }
 `
 const Body = styled.div`
     display:flex;
@@ -117,6 +132,10 @@ const Body = styled.div`
 const ContainerInput = styled.div`
     display:flex;
     flex-direction:row;
+    gap:2em;
+    @media screen and (max-width: 768px){
+        flex-direction:column;
+       
 `
 
 const Input = styled.div`
@@ -125,7 +144,7 @@ const Input = styled.div`
     input{
         border: 1px solid #5B5B5B;
         width:${props => props.width};
-        height:70px;
+        height:55px;
         border-radius:10px;
         background-color:transparent;
         padding:0.5em;
@@ -142,7 +161,7 @@ const Input = styled.div`
 `
 
 const Button = styled.button`
-    width:700px;
+    
     height:70px;
     border-radius:10px;
     background-color:#4B03BA;
