@@ -11,7 +11,7 @@ export const Button = ({width, padding, text, color, background, acction}) => {
 
 const Buttons = styled.div`
     width: ${props => props.width};
-
+    margin-right: 5px;
     padding: ${props => props.padding}em;
     color:${props => props.color};
     display:flex;
@@ -19,4 +19,8 @@ const Buttons = styled.div`
     justify-content:center;
     background-color:${props => props.background};
     border-radius:10px;
+  
+  &:hover {
+    cursor: pointer;
+  }
 `

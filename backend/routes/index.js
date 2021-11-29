@@ -25,8 +25,10 @@ router.post("/login", UserController.getUser);
 router.post("/pagar", (req, res) =>
   PaymentInstance.getMercadoPagoLink(req, res)
 );
+
 router.get("/cowork", CoworkController.getCowork);
 router.get("/reservas", ReservasController.getReserva);
 router.post("/reserva", ReservasController.reservar);
+router.post("/reservaConfirmada", ReservasController.actualizarEstadoReserva)
 
 module.exports = router;

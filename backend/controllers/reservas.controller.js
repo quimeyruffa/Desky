@@ -23,3 +23,9 @@ exports.reservar = async (req, res) => {
     const newReserva = await reserva.save();
     res.status(200).json(newReserva._id);
 }
+
+exports.actualizarEstadoReserva = async (req, res) => {
+    const {id} = req.query;
+    await ReservasService.actualizarEstado({_id: id});
+    res.status(200).json();
+}

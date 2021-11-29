@@ -47,7 +47,7 @@ const Navbar = () => {
                             </MenuItemLink>  
                         </MenuItem>
                         <MenuItem onClick = { () => ChangeClick()}>
-                            <MenuItemLink>
+                            <MenuItemLink href='/booking'>
                                 RESERVAS
                             </MenuItemLink>  
                         </MenuItem>
