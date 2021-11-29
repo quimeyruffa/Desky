@@ -1,10 +1,20 @@
 import styled from 'styled-components';
+import emailjs from 'emailjs-com'
 import Logo from '../../../assets/images/CardPremium.png';
 import Fondo from '../../../assets/images/FondoCard.png';
 import { ReactComponent as LogoDesky } from '../../../assets/SVG/LogoDesky.svg'
+
 const Membership = () => {
+
+    const mailUser = localStorage.getItem('email')
+    const sendEmail = (membership) => {
+        console.log(membership)
+        emailjs.send('service_8sqgkv4', 'template_klk4otv', {mail:mailUser, message:membership} ,'user_75vIN6lCpE0FfKHHcf9cj').then(()=>alert('Se envio el mail con la consulta sobre la membresia seleccionada'))
+        
+    }
     return (
         <ContainerCards>
+            
             <Container>
                 <Header style={{background:'#511E78'}}>
                     <LogoDesky style={{ width: '120px', height: '120px' }} />
@@ -16,7 +26,7 @@ const Membership = () => {
                     </label>
                 </Body>
                 <Footer>
-                    <button>Mas</button>
+                    <button onClick={()=>sendEmail('Desky Daily')}>Consultar</button>
                 </Footer>
             </Container>
 
@@ -32,7 +42,7 @@ const Membership = () => {
                     </label>
                 </Body>
                 <Footer>
-                    <button>Mas</button>
+                    <button onClick={()=>sendEmail('Desky Premium')}>Consultar</button>
                 </Footer>
             </Container>
 
@@ -49,7 +59,7 @@ const Membership = () => {
                     </label>
                 </Body>
                 <Footer>
-                    <button>Mas</button>
+                    <button onClick={()=>sendEmail('Desky Business')}>Consultar</button>
                 </Footer>
             </Container>
         </ContainerCards>
