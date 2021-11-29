@@ -29,7 +29,7 @@ export default function Cards({
     useEffect(async () => {
         await eventos.forEach((event) => {
             if (event.start.dateTime === `${fecha_Ini}T00:00:00-03:00`) {
-                if (event.attendees[1].email !== localStorage.getItem("email")) {
+                if (event.attendees[1].email !== "desky.test001@gmail.com") {
                     if (event.attendees[1].responseStatus !== "needsAction") {
                         fetch(`http://localhost:8080/reservaConfirmada?id=${id_objeto}`, {method: 'POST'}).then(() => {
                             console.log("actualizado! 1");

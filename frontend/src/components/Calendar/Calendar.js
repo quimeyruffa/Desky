@@ -61,7 +61,7 @@ function Calendar({id_coworking, className, id_oficina}) {
                         ],
                         'attendees': [
                             {'email': `${email}`},
-                            {'email': `${user_email}`}
+                            {'email': "desky.test001@gmail.com"}
                         ],
                         'sendNotifications': true,
                         'reminders': {
