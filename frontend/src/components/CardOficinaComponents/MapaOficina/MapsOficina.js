@@ -7,8 +7,8 @@ function MapsOficina() {
   const [viewport, setViewport] = useState({
     width: "1000px",
     height: 320,
-    latitude: -34.60373394696125,
-    longitude: -58.381635006505434,
+    latitude: -34.558540259593336,
+    longitude: -58.444657268667775,
     zoom: 13
   });
   const [showPopup, togglePopup] = React.useState(false);
