@@ -30,6 +30,14 @@ function MapsOficina() {
         trackUserLocation={true}
         auto={false}
       /> 
+      <Marker
+        latitude ={-34.558540259593336}
+        longitude={-58.444657268667775}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
     </ReactMapGL>
     </div>
   );

@@ -30,7 +30,55 @@ function Maps() {
         trackUserLocation={true}
         auto={false}
       /> 
-    </ReactMapGL>
+      <Marker
+        latitude ={-34.558540259593336}
+        longitude={-58.444657268667775}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      <Marker
+        latitude ={-34.5684832526266}
+        longitude={-58.43713412533767}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      <Marker
+        latitude ={-34.60367162058654}
+        longitude={-58.37812301108116}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      <Marker
+        latitude ={-34.59623567345648}
+        longitude={-58.37143705708483}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      <Marker
+        latitude ={-34.60056309649853}
+        longitude={-58.38850624035823}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      <Marker
+        latitude ={-34.586481394451305}
+        longitude={-58.427323310215506}
+        offsetLeft={-20}
+        offsetTop={-10}
+        >
+        <Room />
+      </Marker>
+      </ReactMapGL>
     </div>
   );
 }
