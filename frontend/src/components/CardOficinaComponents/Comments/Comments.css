@@ -1,0 +1,25 @@
+.reviewDescription {
+  text-align: left;
+  margin-left: 5%;
+}
+
+.reviewContainer {
+  text-align: left;
+  margin-left: 5%;
+}
+.tituloComentario {
+  text-align: left;
+  margin-left: 5%;
+}
+.reviewStars {
+}
+
+.RatingContainer {
+  text-align: left;
+  margin-left: 5%;
+}
+
+hr {
+  margin-left: 5%;
+  width: 70%;
+}

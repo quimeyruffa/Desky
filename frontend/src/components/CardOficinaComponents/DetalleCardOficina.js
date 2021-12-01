@@ -12,6 +12,7 @@ import {DropdwOffice} from "../SearchComponents/DropdwOffice/DropdwOffice";
 import {FechasDetalle} from "./FechasDetalle/FechasDetalle";
 import { useHistory } from "react-router";
 import Calendar from "../Calendar/Calendar";
+import { Reviews } from "./Comments/Comments";
 
 export const DetalleCardOficina = () => {
     const history = useHistory();
@@ -68,6 +69,9 @@ export const DetalleCardOficina = () => {
                     <p>{data.datos.direccion}</p>
                 </div>
                 <MapaOficina/>
+            </div>
+            <div>
+                <Reviews/>
             </div>
             {/* <Comments/> */}
             <Footer/>
